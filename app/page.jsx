@@ -143,7 +143,7 @@ export default function HomePage() {
             <div className="label" style={{ justifyContent:'center' }}>Témoignages</div>
             <h2 className="title">Ce que nos clients disent</h2>
           </div>
-          <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:24 }}>
+          <div className="testi-grid">
             {TESTIS.map((t,i) => (
               <div key={i} className="hover-lift" style={{ background:'#fff',border:'1px solid var(--bd)',borderRadius:'var(--rx)',overflow:'hidden' }}>
                 <div style={{ height:4,background:t.color }} />
@@ -164,7 +164,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <style>{`@media(max-width:900px){section .container [style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}}`}</style>
+        <style>{`@media(max-width:900px){section .container [style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}}.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}@media(max-width:700px){.testi-grid{grid-template-columns:1fr!important}}`}</style>
       </section>
 
       <PaymentBloc />

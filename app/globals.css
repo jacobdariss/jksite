@@ -159,3 +159,13 @@ img { max-width: 100%; display: block; }
   transform: translateY(-5px);
   box-shadow: var(--shl);
 }
+
+/* ─── Responsive grids globaux ───────────────────────────────────────────── */
+@media(max-width:700px) {
+  .testi-grid,
+  .seg-grid,
+  .val-grid { grid-template-columns: 1fr !important; }
+}
+@media(max-width:900px) {
+  .seg-grid { grid-template-columns: 1fr !important; }
+}
