@@ -4,6 +4,7 @@ import HeroSlider from '@/components/HeroSlider'
 import PaymentBand, { PaymentBloc } from '@/components/PaymentBand'
 import SegmentCards from '@/components/SegmentCards'
 import ValueCards from '@/components/ValueCards'
+import CounterSection from '@/components/CounterSection'
 
 export const metadata = {
   title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
@@ -40,14 +41,6 @@ const FAQS = [
   { q: "Quels moyens de paiement ?", a: "Mobile Money (Wave, Orange Money, MTN, Moov et +60 autres dans 10 pays africains) et CB (Visa, Mastercard). Provisioning automatique dès confirmation." },
   { q: "Puis-je migrer depuis un autre hébergeur ?", a: "Oui. Migration zéro downtime, formation, suivi 30 jours. Onboarding Accompagné dès 25 000 FCFA." },
   { q: "Comment fonctionne le support ?", a: "Startup : email J+1. Entreprise : email+tél 8h/5j. Institution : 24/7 dédié. Basé à Dakar, en français." },
-]
-
-const COUNTERS = [
-  { value: '+350', label: 'Services Actifs' },
-  { value: '99.95%', label: 'Uptime garanti' },
-  { value: '12', label: 'Offres cloud' },
-  { value: '24/7', label: 'Support dédié' },
-  { value: '100%', label: 'Données au Sénégal' },
 ]
 
 const LOGOS = ['logo-secnsa-196x110.png','sonatel-accademy.png','logo-cnts.png','logo-batinov.png','logo-ctic.jpg','logo-omvs-300x171.png','logo-prodac.png','logo-Access-technologies.jpg','logo-olac-sn_bk.png','logo-abco.jpg','logo-enda-graf.jpg']
@@ -196,24 +189,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Counters */}
-      <section style={{ padding:'60px 0', background:'var(--ow)', borderTop:'1px solid var(--bd)' }}>
-        <div className="container">
-          <div style={{ textAlign:'center',marginBottom:36 }}>
-            <div className="label" style={{ justifyContent:'center' }}>En chiffres</div>
-            <h2 className="title">Jokko en quelques chiffres</h2>
-          </div>
-          <div style={{ display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:16 }}>
-            {COUNTERS.map(c => (
-              <div key={c.label} style={{ background:'#fff',borderRadius:'var(--rx)',padding:'28px 16px',textAlign:'center',boxShadow:'0 2px 12px rgba(0,0,0,.04)' }}>
-                <div style={{ fontFamily:'var(--fd)',fontSize:'2.2rem',fontWeight:700,color:'var(--o)' }}>{c.value}</div>
-                <div style={{ fontSize:'.72rem',color:'var(--bm)',textTransform:'uppercase',letterSpacing:'1px',fontWeight:600,marginTop:4 }}>{c.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <style>{`@media(max-width:768px){section .container [style*="repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important}}`}</style>
-      </section>
+      <CounterSection />
 
       {/* Marquee logos */}
       <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
