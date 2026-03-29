@@ -1,6 +1,5 @@
 import LegalPage from '@/components/LegalPage'
 
-export const metadata = { title: 'Politique de Confidentialité — Jokko Pro Africa' }
 
 export default function PolitiqueConfidentialite() {
   return (

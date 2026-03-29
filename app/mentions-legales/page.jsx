@@ -1,6 +1,5 @@
 import LegalPage from '@/components/LegalPage'
 
-export const metadata = { title: 'Mentions Légales — Jokko Pro Africa' }
 
 export default function MentionsLegales() {
   return (

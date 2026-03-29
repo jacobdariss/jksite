@@ -1,6 +1,5 @@
 import LegalPage from '@/components/LegalPage'
 
-export const metadata = { title: 'Conditions Générales de Service — Jokko Pro Africa' }
 
 export default function CGU() {
   return (

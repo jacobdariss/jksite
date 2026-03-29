@@ -1,6 +1,5 @@
 import LegalPage from '@/components/LegalPage'
 
-export const metadata = { title: 'Droits des Titulaires de Noms de Domaine — Jokko Pro Africa' }
 
 export default function DroitesDomaine() {
   return (
