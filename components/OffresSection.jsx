@@ -17,11 +17,13 @@ export default function OffresSection({ offres, config }) {
     return typeof o.prix === 'object' ? (o.prix[period] || o.prix.mensuel) : o.prix
   }
 
+  const delays = ['', 'reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3']
+
   return (
     <>
       <section id="offres" style={{ padding: '72px 0', background: '#fff' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
             <div className="label" style={{ justifyContent: 'center', color }}>Nos offres</div>
             <h2 className="title">{title}</h2>
             {subtitle && <p className="subtitle" style={{ margin: '0 auto' }}>{subtitle}</p>}
@@ -46,12 +48,13 @@ export default function OffresSection({ offres, config }) {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
-            {offres.map(o => {
+            {offres.map((o, idx) => {
               const prix = getPrix(o)
               const isRecommended = o.badge === 'Recommandé'
 
               return (
                 <div key={o.slug}
+                  className={`hover-lift reveal ${delays[idx] || ''}`}
                   style={{
                     background: '#fff',
                     border: `${isRecommended ? 2 : 1}px solid`,
@@ -59,10 +62,7 @@ export default function OffresSection({ offres, config }) {
                     borderRadius: 'var(--rx)',
                     overflow: 'hidden',
                     position: 'relative',
-                    transition: 'all .3s',
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = 'var(--shl)' }}
-                  onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
                 >
                   {isRecommended && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: color }} />}
                   {o.badge && (

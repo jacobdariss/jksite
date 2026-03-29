@@ -41,7 +41,7 @@ export default async function EntreprisePage() {
 
       <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
         <div className="container">
-          <div style={{ background: 'linear-gradient(135deg,#0D0D0D,#1E2A3A)', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
+          <div className="reveal" style={{ background: 'linear-gradient(135deg,#0D0D0D,#1E2A3A)', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
             <h2 style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, marginBottom: 10 }}>Votre infra ne sera plus jamais votre problème.</h2>
             <p style={{ fontSize: '.95rem', color: 'rgba(255,255,255,.75)', marginBottom: 24 }}>SLA contractuel, support réactif, infrastructure évolutive. <strong style={{ color: '#fff' }}>Jokko assume.</strong></p>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>

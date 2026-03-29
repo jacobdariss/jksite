@@ -5,7 +5,7 @@ export default function PageHero({ label, title, titleEm, desc, img, imgAlt, bad
     <section style={{ padding: '64px 0 48px', background: 'var(--ow)', borderBottom: '3px solid', borderColor: color }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: img ? '1fr 1fr' : '1fr', gap: 48, alignItems: 'center' }}>
-          <div>
+          <div className="reveal">
             <div className="label">{label}</div>
             <h1 className="title">{title}{titleEm && <em style={{ color }}> {titleEm}</em>}</h1>
             <p className="subtitle">{desc}</p>
@@ -21,7 +21,7 @@ export default function PageHero({ label, title, titleEm, desc, img, imgAlt, bad
             )}
           </div>
           {img && (
-            <div style={{ position: 'relative', borderRadius: 'var(--rx)', overflow: 'hidden', boxShadow: 'var(--shl)' }}>
+            <div className="reveal reveal-delay-2" style={{ position: 'relative', borderRadius: 'var(--rx)', overflow: 'hidden', boxShadow: 'var(--shl)' }}>
               <img src={img} alt={imgAlt || ''} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover' }} />
               {badge && (
                 <div style={{ position: 'absolute', top: 12, left: 12, background: color, color: '#fff', fontSize: '.72rem', fontWeight: 700, padding: '5px 14px', borderRadius: 999 }}>

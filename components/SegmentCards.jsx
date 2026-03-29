@@ -29,8 +29,8 @@ export default function SegmentCards() {
   return (
     <>
       <div className="seg-grid">
-        {SEGMENTS.map(s => (
-          <Link key={s.href} href={s.href} className="seg-card">
+        {SEGMENTS.map((s, i) => (
+          <Link key={s.href} href={s.href} className={`seg-card reveal reveal-delay-${i}`}>
             <div style={{ position:'relative', height:200 }}>
               <img src={s.img} alt={s.label} style={{ width:'100%',height:'100%',objectFit:'cover' }} />
               <span style={{ position:'absolute',top:12,left:12,background:s.color,color:'#fff',fontSize:'.68rem',fontWeight:700,padding:'3px 10px',borderRadius:999 }}>

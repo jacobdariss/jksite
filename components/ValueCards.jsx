@@ -11,8 +11,8 @@ export default function ValueCards() {
   return (
     <>
       <div className="val-grid">
-        {VALUES.map(v => (
-          <div key={v.title} className="val-card">
+        {VALUES.map((v, i) => (
+          <div key={v.title} className={`val-card hover-lift reveal reveal-delay-${i}`}>
             <img src={v.img} alt={v.title} style={{ width:'100%',height:140,objectFit:'cover' }} />
             <div style={{ padding:18 }}>
               <h3 style={{ fontFamily:'var(--fd)',fontSize:'1rem',fontWeight:700,marginBottom:6 }}>{v.title}</h3>

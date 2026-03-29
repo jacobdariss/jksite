@@ -61,7 +61,7 @@ export default async function InstitutionPage() {
 
       <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
         <div className="container">
-          <div style={{ background: 'linear-gradient(135deg,#6B4C9A,#8B6FBF)', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
+          <div className="reveal" style={{ background: 'linear-gradient(135deg,#6B4C9A,#8B6FBF)', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
             <h2 style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, marginBottom: 10 }}>La même exigence que vous avez envers vous-même.</h2>
             <p style={{ fontSize: '.95rem', color: 'rgba(255,255,255,.85)', marginBottom: 24 }}>Souveraineté, conformité, continuité garantie. <strong>Jokko assume.</strong></p>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
