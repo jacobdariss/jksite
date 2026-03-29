@@ -30,12 +30,12 @@ const SLA_STATS = [
 ]
 
 const FAQS = [
-  { q: 'Quelle offre pour une institution publique ?', a: '<strong>Héritage</strong> pour l'archivage souverain certifié APDP. <strong>Forteresse</strong> si vous avez un plan de continuité à respecter. <strong>Kilimandjaro</strong> pour une infrastructure critique bare metal.' },
-  { q: 'Qu'est-ce que la conformité APDP ?', a: "L'APDP est l'Autorité de Protection des Données Personnelles du Sénégal. Toutes nos offres Institution incluent la conformité APDP de base. L'add-on Conformité APDP couvre l'audit complet." },
-  { q: 'Les données quittent-elles le Sénégal ?', a: '100% non. Datacenter Tier III+ à Dakar. Réplication multi-site uniquement sur le territoire sénégalais. Données jamais hors du territoire national.' },
+  { q: "Quelle offre pour une institution publique ?", a: "<strong>Héritage</strong> pour l'archivage souverain certifié APDP. <strong>Forteresse</strong> si vous avez un plan de continuité à respecter. <strong>Kilimandjaro</strong> pour une infrastructure critique bare metal." },
+  { q: "Qu'est-ce que la conformité APDP ?", a: "L'APDP est l'Autorité de Protection des Données Personnelles du Sénégal. Toutes nos offres Institution incluent la conformité APDP de base. L'add-on Conformité APDP couvre l'audit complet." },
+  { q: "Les données quittent-elles le Sénégal ?", a: "100% non. Datacenter Tier III+ à Dakar. Réplication multi-site uniquement sur le territoire sénégalais. Données jamais hors du territoire national." },
   { q: "Le SLA inclut-il des pénalités financières ?", a: "Oui. Le segment Institution inclut des SLA avec pénalités contractuelles : crédit de 10% par tranche de 0,1% sous le seuil de disponibilité." },
-  { q: 'Quel délai pour une mise en production Institution ?', a: 'Comptez 5 à 15 jours selon la complexité. Notre équipe réalise l'audit technique, la migration zéro downtime et la formation de vos équipes.' },
-  { q: 'Peut-on avoir un référent dédié nommé ?', a: 'Oui, le référent dédié est inclus dans toutes les offres Institution. Il anticipe vos besoins, connaît votre historique, et intervient avant que vous n'appeliez.' },
+  { q: "Quel délai pour une mise en production Institution ?", a: "Comptez 5 à 15 jours selon la complexité. Notre équipe réalise l'audit technique, la migration zéro downtime et la formation de vos équipes." },
+  { q: "Peut-on avoir un référent dédié nommé ?", a: "Oui, le référent dédié est inclus dans toutes les offres Institution. Il anticipe vos besoins, connaît votre historique, et intervient avant que vous n'appeliez." },
 ]
 
 export default async function InstitutionPage() {

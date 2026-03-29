@@ -40,12 +40,12 @@ const TRAJECTOIRE = [
 ]
 
 const FAQS = [
-  { q: 'Quelle différence entre Baobab et Fondation ?', a: '<strong>Baobab</strong> = hébergement web classique avec domaine .SN. <strong>Fondation</strong> = PaaS managé pour déployer des apps (Node, Python, PHP, Java) via Git.' },
-  { q: 'Puis-je évoluer vers Institution ?', a: 'Oui. La trajectoire Jokko : Startup → Entreprise → Institution. Migration sans interruption, sans perte de données.' },
-  { q: 'Le SLA inclut-il des pénalités ?', a: 'Oui pour le segment Entreprise : SLA contractuel formalisé. Pour les pénalités avec sanctions financières, voir le segment Institution.' },
-  { q: "Comment fonctionne le support 8h/5j ?", a: 'Par email et téléphone, du lundi au vendredi, de 8h à 18h GMT. Temps de réponse garanti < 4h ouvrées.' },
-  { q: 'Savane inclut un référent dédié ?', a: "Oui, Savane inclut un support prioritaire avec référent technique. L'add-on Référent Dédié formalise davantage la relation avec des appels proactifs mensuels." },
-  { q: 'Puis-je tester avant de m'engager ?', a: "Contactez-nous pour une démonstration. Nos offres Entreprise sont annuelles ou mensuelles selon le plan choisi." },
+  { q: "Quelle différence entre Baobab et Fondation ?", a: "<strong>Baobab</strong> = hébergement web classique avec domaine .SN. <strong>Fondation</strong> = PaaS managé pour déployer des apps (Node, Python, PHP, Java) via Git." },
+  { q: "Puis-je évoluer vers Institution ?", a: "Oui. La trajectoire Jokko : Startup → Entreprise → Institution. Migration sans interruption, sans perte de données." },
+  { q: "Le SLA inclut-il des pénalités ?", a: "Oui pour le segment Entreprise : SLA contractuel formalisé. Pour les pénalités avec sanctions financières, voir le segment Institution." },
+  { q: "Comment fonctionne le support 8h/5j ?", a: "Par email et téléphone, du lundi au vendredi, de 8h à 18h GMT. Temps de réponse garanti < 4h ouvrées." },
+  { q: "Savane inclut un référent dédié ?", a: "Oui, Savane inclut un support prioritaire avec référent technique. L'add-on Référent Dédié formalise davantage la relation avec des appels proactifs mensuels." },
+  { q: "Puis-je tester avant de m'engager ?", a: "Contactez-nous pour une démonstration. Nos offres Entreprise sont annuelles ou mensuelles selon le plan choisi." },
 ]
 
 export default async function EntreprisePage() {

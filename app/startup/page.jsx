@@ -39,11 +39,11 @@ const TRAJECTOIRE = [
 ]
 
 const FAQS = [
-  { q: 'Quelle offre pour mon premier site ?', a: '<strong>Racine</strong> pour un site vitrine simple. <strong>Sahara</strong> si vous utilisez WordPress ou WooCommerce.' },
-  { q: "Puis-je changer d'offre ensuite ?", a: 'Oui. Racine → Sahara → Baobab → Savane. Migration fluide, sans interruption.' },
-  { q: 'WordPress est-il préinstallé ?', a: 'Oui avec <strong>Sahara</strong> : WordPress optimisé, cache LiteSpeed, CDN Afrique.' },
-  { q: "Je suis une ONG, quelle offre ?", a: '<strong>Téranga</strong> : tarif solidaire, multi-sites (3 projets), support dédié. 5 000 FCFA/mois.' },
-  { q: 'Quels moyens de paiement ?', a: 'Wave, Orange Money et +60 autres moyens dans 10 pays africains. Provisioning automatique.' },
+  { q: "Quelle offre pour mon premier site ?", a: "<strong>Racine</strong> pour un site vitrine simple. <strong>Sahara</strong> si vous utilisez WordPress ou WooCommerce." },
+  { q: "Puis-je changer d'offre ensuite ?", a: "Oui. Racine → Sahara → Baobab → Savane. Migration fluide, sans interruption." },
+  { q: "WordPress est-il préinstallé ?", a: "Oui avec <strong>Sahara</strong> : WordPress optimisé, cache LiteSpeed, CDN Afrique." },
+  { q: "Je suis une ONG, quelle offre ?", a: "<strong>Téranga</strong> : tarif solidaire, multi-sites (3 projets), support dédié. 5 000 FCFA/mois." },
+  { q: "Quels moyens de paiement ?", a: "Wave, Orange Money et +60 autres moyens dans 10 pays africains. Provisioning automatique." },
   { q: "Combien de temps pour activer ?", a: "Moins de 24h après paiement. Accès envoyés par email." },
 ]
 
