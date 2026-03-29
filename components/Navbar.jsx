@@ -147,20 +147,17 @@ export default function Navbar() {
         .open-2 { transform: rotate(-45deg) translate(5px, -5px); }
 
         /* Overlay */
-        .mobile-overlay { display: none; position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,.45); opacity: 0; transition: opacity .3s; }
-        .mobile-overlay.visible { opacity: 1; }
+        .mobile-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,.45); opacity: 0; transition: opacity .3s; pointer-events: none; }
+        .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
 
-        /* Panel */
-        .mobile-panel { display: none; position: fixed; top: 0; right: 0; width: 300px; max-width: 85vw; height: 100%; background: #fff; z-index: 200; padding: 20px 24px 32px; overflow-y: auto; box-shadow: -4px 0 32px rgba(0,0,0,.15); transform: translateX(100%); transition: transform .35s cubic-bezier(.4,0,.2,1); }
-        .mobile-panel.open { transform: translateX(0); }
+        /* Panel — toujours dans le DOM, caché par transform */
+        .mobile-panel { position: fixed; top: 0; right: 0; width: 300px; max-width: 85vw; height: 100%; background: #fff; z-index: 200; padding: 20px 24px 32px; overflow-y: auto; box-shadow: -4px 0 32px rgba(0,0,0,.15); transform: translateX(100%); transition: transform .35s cubic-bezier(.4,0,.2,1); visibility: hidden; }
+        .mobile-panel.open { transform: translateX(0); visibility: visible; }
 
         /* Mobile breakpoint */
         @media(max-width:900px) {
           .nav-desktop, .nav-cta { display: none !important; }
           .hamburger { display: flex !important; }
-          .mobile-overlay { display: block; pointer-events: none; }
-          .mobile-overlay.visible { pointer-events: auto; }
-          .mobile-panel { display: block; }
         }
       `}</style>
     </>
