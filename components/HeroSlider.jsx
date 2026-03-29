@@ -69,7 +69,7 @@ export default function HeroSlider() {
   }
 
   return (
-    <div style={{ position: 'relative', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', overflow: 'hidden', isolation: 'isolate' }}>
       {/* Track CSS */}
       <div style={{
         display: 'flex',
