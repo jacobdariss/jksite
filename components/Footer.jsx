@@ -39,7 +39,7 @@ const COLS = [
       { label: 'Mon Compte', href: 'https://manage.jokko.africa/', ext: true },
       { label: 'Ouvrir un Ticket', href: 'https://manage.jokko.africa/submitticket.php', ext: true },
       { label: 'Base de Connaissances', href: 'https://help.jokko.africa/fr/', ext: true },
-      { label: 'Statut des services', href: '/statut' },
+      { label: 'Statut des services', href: 'https://statut.jokko.africa' },
     ],
   },
 ]

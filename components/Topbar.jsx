@@ -23,7 +23,7 @@ export default function Topbar() {
           </div>
           {/* Right */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <a href="/statut" className="topbar-pill">
+            <a href="https://statut.jokko.africa" target="_blank" rel="noreferrer" className="topbar-pill">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#34D399', display: 'inline-block', marginRight: 4 }} />
               Statut des services
             </a>
