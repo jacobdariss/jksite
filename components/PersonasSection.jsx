@@ -1,3 +1,4 @@
+'use client'
 // Section "Idéal pour" — cartes personas avec hover
 export default function PersonasSection({ personas, color = 'var(--o)', title }) {
   return (

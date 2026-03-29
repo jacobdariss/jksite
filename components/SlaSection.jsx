@@ -1,3 +1,4 @@
+'use client'
 // Section SLA — 5 stats cards
 export default function SlaSection({ stats, color, bg, title, badge }) {
   return (

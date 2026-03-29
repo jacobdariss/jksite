@@ -1,3 +1,4 @@
+'use client'
 // Section Trajectoire — chemin d'évolution entre offres
 export default function TrajectoireSection({ steps, nextHref, nextLabel, color = 'var(--o)' }) {
   return (
