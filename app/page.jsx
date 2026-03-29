@@ -5,6 +5,7 @@ import PaymentBand, { PaymentBloc } from '@/components/PaymentBand'
 import SegmentCards from '@/components/SegmentCards'
 import ValueCards from '@/components/ValueCards'
 import CounterSection from '@/components/CounterSection'
+import FaqSection from '@/components/FaqSection'
 
 export const metadata = {
   title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
@@ -168,26 +169,10 @@ export default function HomePage() {
 
       <PaymentBloc />
 
-      {/* FAQ */}
-      <section style={{ padding:'80px 0', background:'var(--ow)' }} id="faq">
-        <div className="container" style={{ maxWidth:720 }}>
-          <div style={{ textAlign:'center',marginBottom:44 }}>
-            <div className="label" style={{ justifyContent:'center' }}>FAQ</div>
-            <h2 className="title">Questions fréquentes</h2>
-          </div>
-          {FAQS.map((f,i) => (
-            <details key={i} style={{ borderBottom:'1px solid var(--bd)',padding:'18px 0' }}>
-              <summary style={{ fontWeight:600,fontSize:'.95rem',cursor:'pointer',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center' }}>
-                {f.q}<span style={{ color:'var(--o)',fontSize:'1.2rem',flexShrink:0,marginLeft:12 }}>+</span>
-              </summary>
-              <p style={{ fontSize:'.88rem',color:'var(--bs)',lineHeight:1.7,marginTop:10 }}>{f.a}</p>
-            </details>
-          ))}
-          <div style={{ textAlign:'center',marginTop:32 }}>
-            <a href="https://help.jokko.africa/fr/" target="_blank" rel="noreferrer" className="btn btn-ol">Base de connaissances →</a>
-          </div>
-        </div>
-      </section>
+      <FaqSection faqs={FAQS} color="var(--o)" />
+      <div style={{ textAlign:'center', padding: '0 0 40px', background: 'var(--ow)' }}>
+        <a href="https://help.jokko.africa/fr/" target="_blank" rel="noreferrer" className="btn btn-ol">Base de connaissances →</a>
+      </div>
 
       <CounterSection />
 
