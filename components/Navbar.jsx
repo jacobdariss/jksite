@@ -51,14 +51,6 @@ export default function Navbar() {
                 transition: 'all .2s',
               }}>{l.label}</Link>
             ))}
-            {/* Market Place */}
-            <span style={{
-              fontSize: '.85rem', fontWeight: 500, padding: '6px 12px', borderRadius: 999,
-              color: '#bbb', cursor: 'default', display: 'flex', alignItems: 'center', gap: 5
-            }}>
-              Market Place
-              <span style={{ fontSize: '.55rem', fontWeight: 800, background: 'var(--o)', color: '#fff', padding: '1px 6px', borderRadius: 8 }}>SOON</span>
-            </span>
           </div>
 
           {/* CTA */}

@@ -29,6 +29,7 @@ export default function Topbar() {
             </a>
             <a href="https://help.jokko.africa/fr/" target="_blank" rel="noreferrer" className="topbar-pill">Besoin d&apos;aide</a>
             <Link href="/apropos" className="topbar-pill">À propos</Link>
+            <Link href="/blog" className="topbar-pill">Blog</Link>
           </div>
         </div>
       </div>
