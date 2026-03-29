@@ -11,7 +11,6 @@ const NAV_LINKS = [
   { href: '/institution', label: 'Institution' },
   { href: '/services', label: 'Services' },
   { href: '/partenaires', label: 'Partenaires' },
-  { href: '/blog', label: 'Blog' },
 ]
 
 export default function Navbar() {
