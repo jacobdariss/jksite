@@ -25,12 +25,6 @@ export default function Navbar() {
   // Fermer le menu sur changement de route
   useEffect(() => { setOpen(false) }, [pathname])
 
-  // Bloquer le scroll body quand menu ouvert
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [open])
-
   return (
     <>
       <nav style={{
@@ -147,11 +141,11 @@ export default function Navbar() {
         .open-2 { transform: rotate(-45deg) translate(5px, -5px); }
 
         /* Overlay */
-        .mobile-overlay { position: fixed; inset: 0; z-index: 199; background: rgba(0,0,0,.5); opacity: 0; transition: opacity .3s; pointer-events: none; }
+        .mobile-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9998; background: rgba(0,0,0,.5); opacity: 0; transition: opacity .3s; pointer-events: none; }
         .mobile-overlay.visible { opacity: 1; pointer-events: auto; }
 
-        /* Panel — slide depuis la droite */
-        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100dvh; background: #fff; z-index: 200; padding: 20px 24px 32px; overflow-y: auto; box-shadow: -4px 0 32px rgba(0,0,0,.15); transition: right .35s cubic-bezier(.4,0,.2,1); }
+        /* Panel */
+        .mobile-panel { position: fixed; top: 0; right: -320px; width: 300px; height: 100%; height: 100dvh; background: #fff; z-index: 9999; padding: 20px 24px 32px; overflow-y: auto; box-shadow: -4px 0 32px rgba(0,0,0,.15); transition: right .35s cubic-bezier(.4,0,.2,1); }
         .mobile-panel.open { right: 0; }
 
         /* Mobile breakpoint */
