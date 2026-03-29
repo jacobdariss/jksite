@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { IconPhone, IconEmail, IconWhatsApp } from './ContactIcons'
 
 const COLS = [
   {
@@ -103,12 +104,9 @@ export default function Footer() {
             </p>
             {/* Contact mobile */}
             <div className="footer-contact-mobile">
-              <a href="tel:+221338425735">+221 33 842 57 35</a>
-              <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer">
-                <Image src="/_assets/logos/logo-whatsapp.png" alt="WA" width={13} height={13} style={{ objectFit: 'contain', display: 'inline', marginRight: 4 }} />
-                +221 77 700 37 37
-              </a>
-              <a href="mailto:support@jokko.africa">support@jokko.africa</a>
+              <a href="tel:+221338425735"><IconPhone size={13} /> +221 33 842 57 35</a>
+              <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer"><IconWhatsApp size={13} /> +221 77 700 37 37</a>
+              <a href="mailto:support@jokko.africa"><IconEmail size={13} /> support@jokko.africa</a>
             </div>
           </div>
 
