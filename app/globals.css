@@ -109,3 +109,51 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--ow); }
 ::-webkit-scrollbar-thumb { background: var(--obg2); border-radius: 3px; }
+
+/* ─── Logo Marquee ────────────────────────────────────────────────────────── */
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  animation: mq 35s linear infinite;
+  width: max-content;
+}
+.marquee-track img {
+  height: 32px;
+  opacity: .45;
+  filter: grayscale(1);
+  transition: opacity .3s, filter .3s;
+  flex-shrink: 0;
+}
+.marquee-track img:hover {
+  opacity: .9;
+  filter: grayscale(0);
+}
+@keyframes mq {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ─── Card hover (global, pour toutes les pages) ─────────────────────────── */
+.hover-lift {
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shl);
+}

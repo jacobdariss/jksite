@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Topbar from '@/components/Topbar'
 import CrispChat from '@/components/CrispChat'
+import ScrollRevealInit from '@/components/ScrollRevealInit'
 
 export const metadata = {
   title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <CrispChat />
+        <ScrollRevealInit />
       </body>
     </html>
   )

@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* Segments */}
       <section style={{ padding:'80px 0', background:'#fff' }} id="segments">
         <div className="container">
-          <div style={{ textAlign:'center', marginBottom:48 }}>
+          <div className="reveal" style={{ textAlign:'center', marginBottom:48 }}>
             <div className="label" style={{ justifyContent:'center' }}>Nos Solutions</div>
             <h2 className="title">3 segments, une seule exigence</h2>
             <p className="subtitle" style={{ margin:'0 auto' }}>Même philosophie. Même exigence. Des niveaux de service différents.</p>
@@ -96,7 +96,7 @@ export default function HomePage() {
       {/* Values */}
       <section style={{ padding:'80px 0', background:'#fff' }}>
         <div className="container">
-          <div style={{ textAlign:'center',marginBottom:48 }}>
+          <div className="reveal" style={{ textAlign:'center',marginBottom:48 }}>
             <div className="label" style={{ justifyContent:'center' }}>Nos Valeurs</div>
             <h2 className="title">Ce qui fait Jokko</h2>
             <p style={{ fontSize:'.95rem',color:'var(--bs)',fontStyle:'italic' }}>« Le vrai risque, ce n&apos;est pas la panne. C&apos;est l&apos;absence de responsabilité. »</p>
@@ -138,13 +138,13 @@ export default function HomePage() {
       {/* Testimonials */}
       <section style={{ padding:'80px 0', background:'#fff' }}>
         <div className="container">
-          <div style={{ textAlign:'center',marginBottom:48 }}>
+          <div className="reveal" style={{ textAlign:'center',marginBottom:48 }}>
             <div className="label" style={{ justifyContent:'center' }}>Témoignages</div>
             <h2 className="title">Ce que nos clients disent</h2>
           </div>
           <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:24 }}>
             {TESTIS.map((t,i) => (
-              <div key={i} style={{ background:'#fff',border:'1px solid var(--bd)',borderRadius:'var(--rx)',overflow:'hidden' }}>
+              <div key={i} className="hover-lift" style={{ background:'#fff',border:'1px solid var(--bd)',borderRadius:'var(--rx)',overflow:'hidden' }}>
                 <div style={{ height:4,background:t.color }} />
                 <div style={{ padding:24 }}>
                   <div style={{ color:'var(--o)',fontSize:'.82rem',letterSpacing:1,marginBottom:14 }}>★★★★★</div>
@@ -194,8 +194,12 @@ export default function HomePage() {
       {/* Marquee logos */}
       <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
         <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
-        <div style={{ display:'flex',gap:40,alignItems:'center',flexWrap:'wrap',justifyContent:'center',padding:'0 24px' }}>
-          {LOGOS.map(l => <img key={l} src={`/_assets/logos/${l}`} alt={l} style={{ height:45,maxWidth:140,objectFit:'contain',opacity:.8 }} />)}
+        <div style={{ overflow:'hidden' }}>
+          <div className="marquee-track">
+            {[...LOGOS, ...LOGOS].map((l, i) => (
+              <img key={i} src={`/_assets/logos/${l}`} alt={l.replace(/\.[^.]+$/,'').replace(/-/g,' ')} />
+            ))}
+          </div>
         </div>
       </section>
 
