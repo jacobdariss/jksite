@@ -67,7 +67,7 @@ export default function HomePage() {
       {/* Datacenter */}
       <section style={{ padding:'80px 0', background:'var(--ow)' }} id="dc">
         <div className="container">
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:56, alignItems:'center' }}>
+          <div className="dc-grid">
             <div style={{ position:'relative', borderRadius:'var(--rx)', overflow:'hidden', boxShadow:'var(--shl)' }}>
               <img src="/_assets/logos/datacenter.jpg" alt="Datacenter Jokko" style={{ width:'100%', aspectRatio:'4/3', objectFit:'cover' }} />
               <div style={{ position:'absolute',top:12,left:12,background:'rgba(0,0,0,.7)',color:'#fff',fontSize:'.72rem',fontWeight:700,padding:'5px 12px',borderRadius:999 }}>Tier III+ Certifié</div>
@@ -80,7 +80,7 @@ export default function HomePage() {
               <div className="label">Infrastructure</div>
               <h2 className="title">Datacenter Tier III+ au cœur de l&apos;Afrique de l&apos;Ouest</h2>
               <p className="subtitle">Infrastructure 100% localisée au Sénégal. Les données ne quittent jamais le territoire national.</p>
-              <div style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12 }}>
+              <div className="dc-stats-grid">
                 {DC_STATS.map(s => (
                   <div key={s.label} style={{ background:'#fff',borderRadius:12,padding:'14px 16px',textAlign:'center',border:'1px solid var(--bd)' }}>
                     <div style={{ fontFamily:'var(--fd)',fontSize:'1.2rem',fontWeight:700,color:'var(--o)' }}>{s.value}</div>
@@ -91,7 +91,17 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <style>{`@media(max-width:900px){#dc .container>div{grid-template-columns:1fr!important}}`}</style>
+        <style>{`
+          .dc-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+          .dc-stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+          @media(max-width:900px) {
+            .dc-grid { grid-template-columns:1fr !important; gap:32px !important; }
+            .dc-stats-grid { grid-template-columns:repeat(3,1fr) !important; }
+          }
+          @media(max-width:480px) {
+            .dc-stats-grid { grid-template-columns:repeat(2,1fr) !important; }
+          }
+        `}</style>
       </section>
 
       {/* Values */}
