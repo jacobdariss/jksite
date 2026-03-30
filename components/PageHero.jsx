@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-export default function PageHero({ label, title, titleEm, desc, img, imgAlt, badge, ctas = [], color = 'var(--o)' }) {
+export default function PageHero({ label, title, titleEm, desc, img, imgAlt, badge, ctas = [], color = 'var(--o)', bg }) {
   return (
-    <section style={{ padding: '64px 0 48px', background: 'var(--ow)', borderBottom: '3px solid', borderColor: color }}>
+    <section style={{ padding: '64px 0 48px', background: bg || 'var(--ow)', borderBottom: '3px solid', borderColor: color }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: img ? '1fr 1fr' : '1fr', gap: 48, alignItems: 'center' }}>
           <div className="reveal">

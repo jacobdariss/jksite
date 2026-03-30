@@ -52,13 +52,14 @@ export default async function StartupPage() {
         label="01 — Startup"
         title="Lancez votre projet."
         titleEm="On s'occupe du reste."
-        desc="Fiabilité dès le jour 1, prix adaptés, évolution sans migration. Quand vous grandissez, vous montez de niveau — pas de prestataire."
+        desc="Budget serré, urgence de mise en ligne. Fiabilité dès le jour 1, prix adaptés, évolution garantie sans migration."
         img="/_assets/logos/equipe-reunion.png"
         badge="Startup B2C"
         color="var(--o)"
+        bg="linear-gradient(135deg,#FFF5EB,#FFF0E0)"
         ctas={[
           { label: 'Voir les offres ↓', href: '#offres' },
-          { label: 'Nous contacter', href: 'https://manage.jokko.africa/submitticket.php' },
+          { label: 'Demander conseil', href: 'https://manage.jokko.africa/submitticket.php' },
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Startup sont faites pour vous si…" />

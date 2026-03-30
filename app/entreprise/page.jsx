@@ -60,6 +60,7 @@ export default async function EntreprisePage() {
         img="/_assets/logos/equipe-bureau.png"
         badge="Entreprise B2B"
         color="var(--b)"
+        bg="linear-gradient(135deg,#F0F2F8,#E8ECF4)"
         ctas={[
           { label: 'Voir les offres ↓', href: '#offres' },
           { label: 'Nous contacter', href: 'https://manage.jokko.africa/submitticket.php' },

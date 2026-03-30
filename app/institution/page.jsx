@@ -50,6 +50,7 @@ export default async function InstitutionPage() {
         img="/_assets/logos/datacenter.jpg"
         badge="Institution B2G"
         color="var(--p)"
+        bg="linear-gradient(135deg,#F3EFF8,#EDE6F5)"
         ctas={[
           { label: 'Voir les offres ↓', href: '#offres' },
           { label: 'Demande de devis', href: 'https://manage.jokko.africa/submitticket.php' },
