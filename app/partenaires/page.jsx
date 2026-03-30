@@ -35,24 +35,41 @@ export default function PartenairesPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ padding: '72px 0 56px', background: 'linear-gradient(160deg,#FFF7EE 0%,#FFE8D0 100%)', borderBottom: '3px solid var(--o)' }}>
+      <section style={{ padding: '64px 0 48px', background: 'linear-gradient(135deg,#FFF8ED,#FFF3E0)', borderBottom: '3px solid var(--o)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="partenaires-hero-grid">
+            <div className="reveal">
+              <div style={{ fontSize: '.75rem', color: 'var(--bm)', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <a href="/" style={{ color: 'var(--o)' }}>Accueil</a>
+                <span style={{ color: '#ccc' }}>›</span>
+                <strong>Partenaires</strong>
+              </div>
               <div className="label">Programme Partenaires</div>
-              <h1 className="title">Le marché vend pour nous. <em style={{ color: 'var(--o)' }}>C&apos;est le modèle le plus scalable.</em></h1>
+              <h1 className="title">Le marché vend pour nous. <em style={{ color: 'var(--o)', fontStyle: 'italic' }}>C&apos;est le modèle le plus scalable.</em></h1>
               <p className="subtitle">Un partenaire Jokko n&apos;est pas un revendeur. C&apos;est une extension de notre promesse client.</p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <a href="https://manage.jokko.africa/submitticket.php?step=2&deptid=1&subject=Candidature%20Partenaire" target="_blank" rel="noreferrer" className="btn btn-o btn-lg">Candidater →</a>
                 <a href="#niveaux" className="btn btn-ol btn-lg">Voir les niveaux</a>
               </div>
             </div>
-            <div style={{ borderRadius: 'var(--rx)', overflow: 'hidden', boxShadow: 'var(--shl)' }}>
-              <img src="/_assets/logos/equipe-jokko.png" alt="Partenaires Jokko" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover' }} />
+            <div className="reveal reveal-delay-2" style={{ position: 'relative', borderRadius: 'var(--rx)', overflow: 'hidden', boxShadow: 'var(--shl)' }}>
+              <img src="/_assets/logos/equipe-jokko.png" alt="Partenaires Jokko" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
+              <div style={{ position: 'absolute', top: 12, left: 12, background: 'var(--o)', color: '#fff', fontSize: '.72rem', fontWeight: 700, padding: '5px 14px', borderRadius: 999 }}>
+                Programme 2026
+              </div>
+              <div style={{ position: 'absolute', bottom: -16, left: -16, background: '#fff', borderRadius: 12, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 10, boxShadow: 'var(--shl)' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,var(--o),var(--ol))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: '.8rem', fontWeight: 700 }}>Affilié → Elite</div>
+                  <div style={{ fontSize: '.68rem', color: 'var(--bm)' }}>5 niveaux · Commission progressive</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <style>{`@media(max-width:900px){section .container [style*="1fr 1fr"]{grid-template-columns:1fr!important}}`}</style>
+        <style>{`@media(max-width:900px){ .partenaires-hero-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
       {/* Avantages */}
