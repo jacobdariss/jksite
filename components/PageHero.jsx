@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function PageHero({ label, title, titleEm, desc, img, imgAlt, badge, ctas = [], color = 'var(--o)', bg }) {
+export default function PageHero({ label, title, titleEm, desc, img, imgAlt, badge, ctas = [], color = 'var(--o)', bg, ctaPrimaryColor }) {
   return (
     <section style={{ padding: '64px 0 48px', background: bg || 'var(--ow)', borderBottom: '3px solid', borderColor: color }}>
       <div className="container">
@@ -13,7 +13,9 @@ export default function PageHero({ label, title, titleEm, desc, img, imgAlt, bad
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 {ctas.map((cta, i) => (
                   <a key={i} href={cta.href} className={`btn btn-lg ${i === 0 ? '' : 'btn-ol'}`}
-                    style={i === 0 ? { background: color, color: '#fff' } : { color }}>
+                    style={i === 0
+                      ? { background: ctaPrimaryColor || color, color: '#fff' }
+                      : { color }}>
                     {cta.label}
                   </a>
                 ))}

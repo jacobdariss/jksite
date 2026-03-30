@@ -55,14 +55,15 @@ export default async function EntreprisePage() {
         label="02 — Entreprise"
         title="Votre activité tourne."
         titleEm="On garantit qu'elle ne s'arrête pas."
-        desc="Stabilité garantie, SLA contractuel, support réactif, infrastructure évolutive. Votre infra ne sera plus jamais votre problème."
+        desc="Chaque minute d'arrêt vous coûte de l'argent, des clients, de la crédibilité. Votre infra ne sera plus jamais votre problème."
         img="/_assets/logos/equipe-bureau.png"
         badge="Entreprise B2B"
         color="var(--b)"
+        ctaPrimaryColor="#0D0D0D"
         bg="linear-gradient(135deg,#F0F2F8,#E8ECF4)"
         ctas={[
           { label: 'Voir les offres ↓', href: '#offres' },
-          { label: 'Nous contacter', href: 'https://manage.jokko.africa/submitticket.php' },
+          { label: 'Demander conseil', href: 'https://manage.jokko.africa/submitticket.php' },
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Entreprise sont faites pour vous si…" />
