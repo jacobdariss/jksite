@@ -104,17 +104,18 @@ export default function ServicesPage() {
       </section>
 
       {/* Stats band */}
-      <div style={{ background: 'linear-gradient(135deg,var(--o),var(--ol))', padding: '14px 0' }}>
+      <div style={{ background: 'linear-gradient(135deg,var(--o),var(--od))', padding: '16px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 40, flexWrap: 'wrap' }}>
-            {[['13', 'add-ons'], ['3', 'catégories'], ['100%', 'compatibles toutes offres'], ['Sénégal', 'hébergé']].map(([v, l]) => (
-              <div key={l} style={{ textAlign: 'center', color: '#fff' }}>
-                <div style={{ fontFamily: 'var(--fd)', fontSize: '1.4rem', fontWeight: 700 }}>{v}</div>
-                <div style={{ fontSize: '.68rem', textTransform: 'uppercase', letterSpacing: '1px', color: 'rgba(255,255,255,.8)' }}>{l}</div>
+          <div className="stats-band">
+            {[['13', 'Add-ons'], ['3', 'Catégories'], ['100%', 'Compatibles toutes offres'], ['Sénégal', 'Hébergé']].map(([v, l]) => (
+              <div key={l} style={{ textAlign: 'center', color: '#fff', padding: '4px 0' }}>
+                <div style={{ fontFamily: 'var(--fd)', fontSize: '1.4rem', fontWeight: 700, lineHeight: 1 }}>{v}</div>
+                <div style={{ fontSize: '.65rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'rgba(255,255,255,.8)', marginTop: 5 }}>{l}</div>
               </div>
             ))}
           </div>
         </div>
+        <style>{`.stats-band { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; align-items: center; } @media(max-width:600px){ .stats-band { grid-template-columns: repeat(2,1fr); gap: 16px; } }`}</style>
       </div>
 
       {/* Add-ons sections */}
