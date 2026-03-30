@@ -50,7 +50,7 @@ export default async function InstitutionPage() {
         bg="linear-gradient(135deg,#F3EFF8,#EDE6F5)"
         ctas={[
           { label: 'Voir les offres ↓', href: '#offres' },
-          { label: 'Demande de devis', href: 'https://manage.jokko.africa/submitticket.php' },
+          { label: 'Demander conseil', href: 'https://manage.jokko.africa/submitticket.php' },
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--p)" title="Les offres Institution sont faites pour vous si…" />
