@@ -1,11 +1,10 @@
 import PageHero from '@/components/PageHero'
-import OffresSection from '@/components/OffresSection'
+import OffresEntreprise from '@/components/OffresEntreprise'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 import SlaSection from '@/components/SlaSection'
 import TrajectoireSection from '@/components/TrajectoireSection'
 import FaqSection from '@/components/FaqSection'
-import { getOffresBySegment } from '@/lib/strapi'
 
 export const revalidate = 3600
 
@@ -49,7 +48,7 @@ const FAQS = [
 ]
 
 export default async function EntreprisePage() {
-  const offres = await getOffresBySegment('entreprise')
+  
   return (
     <>
       <PageHero
@@ -67,7 +66,7 @@ export default async function EntreprisePage() {
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Entreprise sont faites pour vous si…" />
-      <OffresSection offres={offres} segment="entreprise" config={{ title: 'Stabilité, production, zéro stress technique', color: 'var(--b)', hasPeriodToggle: true, periodLabel: 'Annuel (-20%)', ctaLabel: 'Commander', ctaHref: 'https://manage.jokko.africa/', ressourceBg: '#F0F2F8', ressourceColor: 'var(--b)', checkColor: 'var(--o)' }} />
+      <OffresEntreprise />
       <AddonsSection addons={ADDONS} color="var(--o)" title="Renforcez votre infrastructure" cols={4} />
       <SlaSection stats={SLA_STATS} color="var(--b)" bg="linear-gradient(160deg,#F0F2F8,#E8ECF4,#DEE4F0)" title="Nos engagements Entreprise" badge="SLA 99.9% · Contractuel" />
       <TrajectoireSection steps={TRAJECTOIRE} nextHref="/institution" nextLabel="Institution" color="var(--o)" />
