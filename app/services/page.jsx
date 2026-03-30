@@ -60,19 +60,47 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section style={{ padding: '64px 0 48px', background: 'var(--ow)', borderBottom: '1px solid var(--bd)' }}>
+      <section style={{ padding: '64px 0 48px', background: 'linear-gradient(135deg,#FFF7EE 0%,#FFE8D0 60%,#F8F4FF 100%)', borderBottom: '3px solid var(--o)' }}>
         <div className="container">
-          <div className="label">Add-ons</div>
-          <h1 className="title">Des services qui s&apos;ajoutent<br />à n&apos;importe quelle offre.</h1>
-          <p className="subtitle">Communication, sécurité, support — chaque add-on renforce votre offre principale sans complexité.</p>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-            {Object.entries(SECTION_CONFIG).map(([key, cfg]) => (
-              <a key={key} href={`#${key}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: cfg.bg, color: cfg.color, border: `1px solid ${cfg.color}30`, borderRadius: 999, padding: '6px 16px', fontSize: '.82rem', fontWeight: 700 }}>
-                {cfg.label}
-              </a>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }} className="services-hero-grid">
+            {/* Texte */}
+            <div className="reveal">
+              <div style={{ fontSize: '.75rem', color: 'var(--bm)', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <a href="/" style={{ color: 'var(--o)' }}>Accueil</a>
+                <span style={{ color: '#ccc' }}>›</span>
+                <strong>Nos Services</strong>
+              </div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#E85D0415', border: '1px solid #E85D0430', borderRadius: 6, padding: '5px 12px', marginBottom: 16 }}>
+                <span style={{ fontSize: '.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--o)' }}>13 add-ons disponibles</span>
+              </div>
+              <div className="label" style={{ color: 'var(--o)' }}>Add-ons & Services</div>
+              <h1 className="title">Des services qui s&apos;ajoutent<br /><em style={{ color: 'var(--o)', fontStyle: 'italic' }}>à n&apos;importe quelle offre.</em></h1>
+              <p className="subtitle">Communication pro, sécurité renforcée, support premium — ajoutez les briques dont vous avez besoin, quand vous en avez besoin. Tous compatibles Startup, Entreprise et Institution.</p>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                <a href="#communication" className="btn btn-lg btn-ol">Communication</a>
+                <a href="#securite" className="btn btn-lg" style={{ background: 'transparent', color: '#00897B', border: '1.5px solid #00897B' }}>Sécurité</a>
+                <a href="#support" className="btn btn-lg" style={{ background: 'transparent', color: '#7B1FA2', border: '1.5px solid #7B1FA2' }}>Support</a>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="reveal reveal-delay-2" style={{ position: 'relative', borderRadius: 'var(--rx)', overflow: 'hidden', boxShadow: 'var(--shl)' }}>
+              <img src="/_assets/logos/equipe-bureau.png" alt="Services Jokko" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
+              <div style={{ position: 'absolute', top: 12, left: 12, background: 'var(--o)', color: '#fff', fontSize: '.72rem', fontWeight: 700, padding: '5px 14px', borderRadius: 999 }}>
+                13 add-ons
+              </div>
+              <div style={{ position: 'absolute', bottom: -16, left: -16, background: '#fff', borderRadius: 12, padding: '12px 16px', display: 'flex', alignItems: 'center', gap: 10, boxShadow: 'var(--shl)' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,var(--o),var(--ol))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: '.8rem', fontWeight: 700 }}>100% compatibles</div>
+                  <div style={{ fontSize: '.68rem', color: 'var(--bm)' }}>Startup · Entreprise · Institution</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <style>{`.services-hero-grid { } @media(max-width:900px){ .services-hero-grid { grid-template-columns: 1fr !important; } .services-hero-grid > div:last-child { margin-top: 32px; } }`}</style>
       </section>
 
       {/* Stats band */}
