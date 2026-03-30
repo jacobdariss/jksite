@@ -1,11 +1,9 @@
 import PageHero from '@/components/PageHero'
-import OffresSection from '@/components/OffresSection'
+import OffresInstitution from '@/components/OffresInstitution'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 import SlaSection from '@/components/SlaSection'
 import FaqSection from '@/components/FaqSection'
-import { getOffresBySegment } from '@/lib/strapi'
-
 export const revalidate = 3600
 
 const PERSONAS = [
@@ -39,7 +37,6 @@ const FAQS = [
 ]
 
 export default async function InstitutionPage() {
-  const offres = await getOffresBySegment('institution')
   return (
     <>
       <PageHero
@@ -57,7 +54,7 @@ export default async function InstitutionPage() {
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--p)" title="Les offres Institution sont faites pour vous si…" />
-      <OffresSection offres={offres} segment="institution" config={{ title: 'Souveraineté, conformité, continuité garantie', color: 'var(--p)', hasPeriodToggle: false, ctaLabel: 'Demander un devis', ctaHref: 'https://manage.jokko.africa/submitticket.php', ressourceBg: 'rgba(107,76,154,.1)', ressourceColor: 'var(--p)', checkColor: 'var(--p)', showInclusLabel: true }} />
+      <OffresInstitution />
       <AddonsSection addons={ADDONS} color="var(--p)" title="Sécurité & conformité avancées" cols={3} />
       <SlaSection stats={SLA_STATS} color="var(--p)" bg="linear-gradient(160deg,#F3F0FA,#EDE8F5,#E2D9F0)" title="Nos engagements Institution" badge="SLA 99.95% · Pénalités contractuelles" />
       <FaqSection faqs={FAQS} color="var(--p)" />
