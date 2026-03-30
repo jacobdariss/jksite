@@ -144,7 +144,7 @@ export default function PartenairesPage() {
             <h2 className="title">Affilié ou Partenaire ?</h2>
             <p className="subtitle" style={{ margin: '0 auto' }}>Deux statuts différents, deux niveaux d&apos;engagement, deux modèles de rémunération.</p>
           </div>
-          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          <div className="reveal p-deux-parcours">
             {[
               {
                 title: 'Affilié', badge: 'Niveau 1', bg: 'var(--ow)', border: 'var(--bd)',
@@ -180,7 +180,7 @@ export default function PartenairesPage() {
             ))}
           </div>
         </div>
-        <style>{`@media(max-width:768px){ .reveal [style*="1fr 1fr"] { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`.p-deux-parcours { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; } @media(max-width:768px){ .p-deux-parcours { grid-template-columns: 1fr !important; } }`}</style>
       </section>
 
       {/* ═══ TYPES ═══ */}
