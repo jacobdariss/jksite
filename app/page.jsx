@@ -36,12 +36,16 @@ const TESTIS = [
 ]
 
 const FAQS = [
-  { q: "Qu'est-ce que Jokko Pro Africa ?", a: "Le premier fournisseur cloud 100% sénégalais. Hébergement, serveurs cloud, email pro et SMS, hébergés dans un datacenter Tier III+ à Dakar." },
-  { q: "Quelle offre choisir ?", a: "Startup : Racine ou Sahara. Entreprise : Baobab ou Fondation. Institution : Héritage ou Forteresse. Pas sûr ? Contactez-nous." },
-  { q: "Mes données restent au Sénégal ?", a: "Oui, 100%. Datacenter Tier III+ à Dakar. Conformité totale APDP. Données jamais hors du territoire." },
-  { q: "Quels moyens de paiement ?", a: "Mobile Money (Wave, Orange Money, MTN, Moov et +60 autres dans 10 pays africains) et CB (Visa, Mastercard). Provisioning automatique dès confirmation." },
-  { q: "Puis-je migrer depuis un autre hébergeur ?", a: "Oui. Migration zéro downtime, formation, suivi 30 jours. Onboarding Accompagné dès 25 000 FCFA." },
-  { q: "Comment fonctionne le support ?", a: "Startup : email J+1. Entreprise : email+tél 8h/5j. Institution : 24/7 dédié. Basé à Dakar, en français." },
+  { q: "Qu'est-ce que Jokko Pro Africa ?", a: "Le premier fournisseur cloud 100% sénégalais. Hébergement, serveurs cloud, email pro et SMS, hébergés dans un datacenter Tier III+ à Dakar. Opéré par DARISS CONSULTING SAS." },
+  { q: "Quelle offre choisir ?", a: "Startup : Racine ou Sahara. Entreprise : Baobab ou Fondation. Institution : Héritage ou Forteresse. Pas sûr ? Contactez-nous — on vous oriente en 5 minutes." },
+  { q: "Mes données restent au Sénégal ?", a: "Oui, 100%. Datacenter Tier III+ à Dakar. Conformité totale APDP. Vos données ne quittent jamais le territoire national, garanti par contrat." },
+  { q: "Qu'est-ce qu'un datacenter Tier III+ ?", a: "Un datacenter Tier III+ garantit une redondance N+1 sur toutes ses infrastructures (alimentation, refroidissement, réseau), assurant 99.95% de disponibilité avec zéro interruption planifiée." },
+  { q: "Que signifie le SLA contractuel ?", a: "Le SLA (Service Level Agreement) est un engagement de disponibilité formalisé dans votre contrat. Entreprise : 99,9%. Institution : 99,95% avec pénalités financières en cas de non-atteinte." },
+  { q: "Puis-je migrer depuis un autre hébergeur ?", a: "Oui. Migration zéro downtime, configuration complète, formation de votre équipe et suivi 30 jours post-migration. Onboarding Accompagné dès 25 000 FCFA." },
+  { q: "Comment fonctionne le support ?", a: "Startup : email J+1. Entreprise : email + téléphone 8h/5j, incident traité sous 4h. Institution : support 24/7 dédié, incident sous 1h. Toujours basé à Dakar, en français." },
+  { q: "Puis-je évoluer vers une offre supérieure ?", a: "Oui, c'est conçu pour ça. Racine → Sahara → Baobab → Savane → Kilimandjaro. Migration fluide sans interruption ni perte de données. Vous ne changez jamais de prestataire." },
+  { q: "Quels moyens de paiement ?", a: "Wave, Orange Money et +60 moyens de paiement dans 10 pays africains. Visa, Mastercard. Provisioning automatique dès confirmation du paiement." },
+  { q: "Comment devenir partenaire ?", a: "Rejoignez le Programme Partenaires Jokko — Affilié, Revendeur ou Intégrateur. Contactez-nous ou consultez la page Partenaires pour découvrir les niveaux et conditions." },
 ]
 
 const LOGOS = Array.from({length: 30}, (_, i) => `${i + 1}.png`)
