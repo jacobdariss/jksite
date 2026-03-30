@@ -44,7 +44,7 @@ const FAQS = [
   { q: "Comment fonctionne le support ?", a: "Startup : email J+1. Entreprise : email+tél 8h/5j. Institution : 24/7 dédié. Basé à Dakar, en français." },
 ]
 
-const LOGOS = ['logo-secnsa-196x110.png','sonatel-accademy.png','logo-cnts.png','logo-batinov.png','logo-ctic.jpg','logo-omvs-300x171.png','logo-prodac.png','logo-Access-technologies.jpg','logo-olac-sn_bk.png','logo-abco.jpg','logo-enda-graf.jpg']
+const LOGOS = Array.from({length: 30}, (_, i) => `${i + 1}.png`)
 
 export default function HomePage() {
   return (
@@ -192,7 +192,7 @@ export default function HomePage() {
         <div style={{ overflow:'hidden' }}>
           <div className="marquee-track">
             {[...LOGOS, ...LOGOS].map((l, i) => (
-              <img key={i} src={`/_assets/logos/${l}`} alt={l.replace(/\.[^.]+$/,'').replace(/-/g,' ')} />
+              <img key={i} src={`/_assets/partenaires/${l}`} alt={`Partenaire ${l.replace('.png','')}`} />
             ))}
           </div>
         </div>

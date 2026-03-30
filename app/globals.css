@@ -121,15 +121,14 @@ img { max-width: 100%; display: block; }
   width: max-content;
 }
 .marquee-track img {
-  height: 32px;
-  opacity: .45;
-  filter: grayscale(1);
-  transition: opacity .3s, filter .3s;
+  height: 36px;
+  opacity: .85;
+  filter: none;
+  transition: opacity .3s;
   flex-shrink: 0;
 }
 .marquee-track img:hover {
-  opacity: .9;
-  filter: grayscale(0);
+  opacity: 1;
 }
 @keyframes mq {
   0%   { transform: translateX(0); }
