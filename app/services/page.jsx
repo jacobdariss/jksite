@@ -107,15 +107,15 @@ export default function ServicesPage() {
       <div style={{ background: 'linear-gradient(135deg,var(--o),var(--od))', padding: '16px 0' }}>
         <div className="container">
           <div className="stats-band">
-            {[['13', 'Add-ons'], ['3', 'Catégories'], ['100%', 'Compatibles toutes offres'], ['Sénégal', 'Hébergé']].map(([v, l]) => (
-              <div key={l} style={{ textAlign: 'center', color: '#fff', padding: '4px 0' }}>
+            {[['13', 'Add-ons'], ['3', 'Catégories'], ['100%', 'Compatibles toutes offres'], ['Sénégal', 'Souveraineté'], ['Tier III+', 'Data Center']].map(([v, l]) => (
+              <div key={l} style={{ textAlign: 'center', color: '#fff', padding: '4px 0', borderRight: '1px solid rgba(255,255,255,.15)' }}>
                 <div style={{ fontFamily: 'var(--fd)', fontSize: '1.4rem', fontWeight: 700, lineHeight: 1 }}>{v}</div>
                 <div style={{ fontSize: '.65rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: 'rgba(255,255,255,.8)', marginTop: 5 }}>{l}</div>
               </div>
             ))}
           </div>
         </div>
-        <style>{`.stats-band { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; align-items: center; } @media(max-width:600px){ .stats-band { grid-template-columns: repeat(2,1fr); gap: 16px; } }`}</style>
+        <style>{`.stats-band { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; align-items: center; } .stats-band > div:last-child { border-right: none; } @media(max-width:700px){ .stats-band { grid-template-columns: repeat(2,1fr); gap: 16px; } .stats-band > div { border-right: none !important; } }`}</style>
       </div>
 
       {/* Add-ons sections */}
