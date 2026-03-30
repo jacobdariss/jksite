@@ -45,8 +45,8 @@ export default function PartenairesPage() {
                 <strong>Partenaires</strong>
               </div>
               <div className="label">Programme Partenaires</div>
-              <h1 className="title">Le marché vend pour nous. <em style={{ color: 'var(--o)', fontStyle: 'italic' }}>C&apos;est le modèle le plus scalable.</em></h1>
-              <p className="subtitle">Un partenaire Jokko n&apos;est pas un revendeur. C&apos;est une extension de notre promesse client.</p>
+              <h1 className="title">Un partenaire Jokko n&apos;est pas un revendeur. <em style={{ color: 'var(--o)', fontStyle: 'italic' }}>C&apos;est une extension de notre promesse.</em></h1>
+              <p className="subtitle">Rejoignez un réseau de distribution structuré autour d&apos;une seule exigence : la continuité numérique de chaque client.</p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <a href="https://manage.jokko.africa/submitticket.php?step=2&deptid=1&subject=Candidature%20Partenaire" target="_blank" rel="noreferrer" className="btn btn-o btn-lg">Candidater →</a>
                 <a href="#niveaux" className="btn btn-ol btn-lg">Voir les niveaux</a>
