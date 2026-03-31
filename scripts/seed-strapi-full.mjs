@@ -36,13 +36,14 @@ async function api(method, path, body) {
 }
 
 async function upsert(collection, filterKey, filterVal, data) {
-  const existing = await api('GET', `/${collection}?filters[${filterKey}][$eq]=${encodeURIComponent(filterVal)}`)
+  const publishedData = { ...data, publishedAt: new Date().toISOString() }
+  const existing = await api('GET', `/${collection}?filters[${filterKey}][$eq]=${encodeURIComponent(filterVal)}&publicationState=preview`)
   if (existing.data?.length > 0) {
-    await api('PUT', `/${collection}/${existing.data[0].id}`, { data })
+    await api('PUT', `/${collection}/${existing.data[0].id}`, { data: publishedData })
     console.log(`  ↩  ${collection} mis à jour : ${filterVal}`)
     return existing.data[0].id
   }
-  const created = await api('POST', `/${collection}`, { data })
+  const created = await api('POST', `/${collection}`, { data: publishedData })
   console.log(`  ✓  ${collection} créé : ${filterVal}`)
   return created.data.id
 }
