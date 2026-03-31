@@ -49,6 +49,7 @@ const FAQS = [
 ]
 
 export default async function EntreprisePage() {
+  const offres = await getOffresBySegment('entreprise')
   
   return (
     <>
