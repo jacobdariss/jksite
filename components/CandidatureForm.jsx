@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const APPLY_URL = 'https://manage.jokko.africa/modules/addons/jokko_partner/api/apply.php'
+const APPLY_URL = '/api/affiliate/apply'
 
 const TYPES = [
   { key: 'affiliate',     icon: '🔗', label: 'Affilié',        desc: 'Recommandez & gagnez des commissions' },
@@ -75,11 +75,10 @@ export default function CandidatureForm() {
     setError('')
     setLoading(true)
     try {
-      const secret = ''  // clé gérée côté WHMCS via header X-JPN-Secret
       const res = await fetch(APPLY_URL, {
-        method: 'POST', mode: 'cors', credentials: 'omit',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, secret }),
+        body: JSON.stringify(form),
       })
       const data = await res.json()
       if (data.success) {
