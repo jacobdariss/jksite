@@ -6,6 +6,8 @@ import SegmentCards from '@/components/SegmentCards'
 import ValueCards from '@/components/ValueCards'
 import CounterSection from '@/components/CounterSection'
 import FaqSection from '@/components/FaqSection'
+import TestimonialsSection from '@/components/TestimonialsSection'
+import { getTestimonials } from '@/lib/strapi'
 
 export const metadata = {
   title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
@@ -29,11 +31,6 @@ const WHY = [
   { title: 'Engagement réel', desc: 'SLA formalisés, pénalités, transparence.' },
 ]
 
-const TESTIS = [
-  { text: "Depuis que nous sommes chez Jokko, zéro souci technique. L'équipe est réactive et comprend nos besoins.", name: 'Amadou Diallo', role: 'DG — Agence Digitale Dakar', color: '#E85D04' },
-  { text: "La souveraineté de nos données était non négociable. Jokko est le seul à offrir ça avec un SLA à pénalités.", name: 'Fatou Ndiaye', role: 'DSI — Institution Publique', color: '#6B4C9A' },
-  { text: "Migration depuis OVH en 48h, zéro downtime. Le support local fait toute la différence.", name: 'Moussa Ba', role: 'CTO — Startup SaaS', color: '#0D0D0D' },
-]
 
 const FAQS = [
   { q: "Qu'est-ce que Jokko Pro Africa ?", a: "Le premier fournisseur cloud 100% sénégalais. Hébergement, serveurs cloud, email pro et SMS, hébergés dans un datacenter Tier III+ à Dakar. Opéré par DARISS CONSULTING SAS." },
@@ -50,7 +47,10 @@ const FAQS = [
 
 const LOGOS = Array.from({length: 30}, (_, i) => `${i + 1}.png`)
 
-export default function HomePage() {
+export const revalidate = 3600
+
+export default async function HomePage() {
+  const testimonials = await getTestimonials()
   return (
     <>
       <HeroSlider />
@@ -150,45 +150,7 @@ export default function HomePage() {
         <style>{`@media(max-width:900px){section .container [style*="1fr 1fr"]{grid-template-columns:1fr!important}}`}</style>
       </section>
 
-      {/* Testimonials */}
-      <section style={{ padding:'80px 0', background:'#fff' }}>
-        <div className="container">
-          <div className="reveal" style={{ textAlign:'center',marginBottom:48 }}>
-            <div className="label" style={{ justifyContent:'center' }}>Témoignages</div>
-            <h2 className="title">Ce que nos clients disent</h2>
-          </div>
-          <div className="testi-grid">
-            {TESTIS.map((t,i) => (
-              <div key={i} className="hover-lift" style={{ background:'#fff',border:'1px solid var(--bd)',borderRadius:'var(--rx)',overflow:'hidden' }}>
-                <div style={{ height:4,background:t.color }} />
-                <div style={{ padding:24 }}>
-                  <div style={{ color:'var(--o)',fontSize:'.82rem',letterSpacing:1,marginBottom:14 }}>★★★★★</div>
-                  <p style={{ fontFamily:'var(--fd)',fontSize:'.95rem',lineHeight:1.6,color:'var(--bs)',fontStyle:'italic',marginBottom:16 }}>« {t.text} »</p>
-                  <div style={{ display:'flex',alignItems:'center',gap:10 }}>
-                    <div style={{ width:40,height:40,borderRadius:'50%',background:t.color,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'.75rem',fontWeight:800,color:'#fff',flexShrink:0 }}>
-                      {t.name.split(' ').map(n=>n[0]).join('')}
-                    </div>
-                    <div>
-                      <div style={{ fontSize:'.85rem',fontWeight:700 }}>{t.name}</div>
-                      <div style={{ fontSize:'.72rem',color:'var(--bm)' }}>{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <style>{`@media(max-width:900px){section .container [style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}}.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}@media(max-width:700px){.testi-grid{grid-template-columns:1fr!important}}`}</style>
-      </section>
-
-      <PaymentBloc />
-
-      <FaqSection faqs={FAQS} color="var(--o)" />
-      <div style={{ textAlign:'center', padding: '0 0 40px', background: 'var(--ow)' }}>
-        <a href="https://help.jokko.africa/fr/" target="_blank" rel="noreferrer" className="btn btn-ol">Base de connaissances →</a>
-      </div>
-
-      <CounterSection />
+            <TestimonialsSection testimonials={testimonials} />
 
       {/* Marquee logos */}
       <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
