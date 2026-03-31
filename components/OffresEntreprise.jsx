@@ -100,10 +100,8 @@ function mergeCards(staticCards, offres, PRICING) {
   const newPricing = { ...PRICING }
   
   const cards = staticCards.map(card => {
-    const o = offres.find(o => {
-      const n = (o.nom || o.name || '').toLowerCase()
-      return n === card.name.toLowerCase() || n === card.slug
-    })
+    // Matcher par slug (stable) plutôt que par nom (peut changer)
+    const o = offres.find(o => o.slug === card.slug)
     if (!o) return card
     
     // Mise à jour des prix dans PRICING
