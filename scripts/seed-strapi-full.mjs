@@ -39,13 +39,15 @@ async function upsert(collection, filterKey, filterVal, data) {
   const publishedData = { ...data, publishedAt: new Date().toISOString() }
   const existing = await api('GET', `/${collection}?filters[${filterKey}][$eq]=${encodeURIComponent(filterVal)}&publicationState=preview`)
   if (existing.data?.length > 0) {
-    await api('PUT', `/${collection}/${existing.data[0].id}`, { data: publishedData })
+    const entry = existing.data[0]
+    const updateId = entry.documentId || entry.id
+    await api('PUT', `/${collection}/${updateId}`, { data: publishedData })
     console.log(`  ↩  ${collection} mis à jour : ${filterVal}`)
-    return existing.data[0].id
+    return entry.documentId || entry.id
   }
   const created = await api('POST', `/${collection}`, { data: publishedData })
   console.log(`  ✓  ${collection} créé : ${filterVal}`)
-  return created.data.id
+  return created.data?.documentId || created.data?.id
 }
 
 // ─── SEGMENTS ────────────────────────────────────────────────────────────────
