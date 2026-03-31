@@ -1,10 +1,9 @@
 import './globals.css'
-import { Suspense } from 'react'
-import AffiliateTracker from '@/components/AffiliateTracker'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Topbar from '@/components/Topbar'
 import CrispChat from '@/components/CrispChat'
+import { Suspense } from 'react'
 import AffiliateTracker from '@/components/AffiliateTracker'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 
@@ -37,7 +36,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <CrispChat />
-      <AffiliateTracker />
+      <Suspense><AffiliateTracker /></Suspense>
         <ScrollRevealInit />
       </body>
     </html>
