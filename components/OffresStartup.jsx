@@ -85,17 +85,17 @@ const INFO = (
 function mergeCards(staticCards, offres) {
   if (!offres || offres.length === 0) return staticCards
   return staticCards.map(card => {
+    // Strapi retourne les offres normalisées avec 'nom' (via normalizeOffer)
     const o = offres.find(o => {
-      const n = (o.name || o.attributes?.name || '').toLowerCase()
+      const n = (o.nom || o.name || '').toLowerCase()
       return n === card.name.toLowerCase()
     })
     if (!o) return card
-    const a = o.attributes || o
     return {
       ...card,
-      name:    a.name    || card.name,
-      tagline: a.subtitle || card.tagline,
-      features: Array.isArray(a.features) && a.features.length ? a.features : card.features,
+      name:    o.nom     || card.name,
+      tagline: o.tagline || card.tagline,
+      features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
     }
   })
 }
