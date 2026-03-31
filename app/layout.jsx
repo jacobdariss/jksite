@@ -1,4 +1,6 @@
 import './globals.css'
+import { Suspense } from 'react'
+import AffiliateTracker from '@/components/AffiliateTracker'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Topbar from '@/components/Topbar'
