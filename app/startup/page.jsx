@@ -1,5 +1,6 @@
 import PageHero from '@/components/PageHero'
 import OffresStartup from '@/components/OffresStartup'
+import { getOffresBySegment } from '@/lib/strapi'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 import SlaSection from '@/components/SlaSection'
@@ -46,6 +47,7 @@ const FAQS = [
 ]
 
 export default async function StartupPage() {
+  const offres = await getOffresBySegment('startup')
   return (
     <>
       <PageHero
@@ -63,7 +65,7 @@ export default async function StartupPage() {
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Startup sont faites pour vous si…" />
-      <OffresStartup />
+      <OffresStartup offres={offres} />
       <AddonsSection addons={ADDONS} color="var(--o)" title="Enrichissez votre hébergement" cols={3} />
       <SlaSection stats={SLA_STATS} color="var(--o)" bg="linear-gradient(160deg,#FFF7EE,#FFE8D0,#FFD6B0)" title="Nos engagements Startup" badge="SLA 99.5% · Best effort" />
       <TrajectoireSection steps={TRAJECTOIRE} nextHref="/entreprise" nextLabel="Entreprise" color="var(--o)" />

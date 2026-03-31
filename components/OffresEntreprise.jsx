@@ -87,7 +87,27 @@ const PERIODS = [
   { key: 'a', label: 'Annuel' },
 ]
 
-export default function OffresEntreprise() {
+
+// Merge données Strapi avec données statiques
+function mergeCards(staticCards, offres) {
+  if (!offres || offres.length === 0) return staticCards
+  return staticCards.map(card => {
+    const o = offres.find(o => {
+      const n = (o.name || o.attributes?.name || '').toLowerCase()
+      return n === card.name.toLowerCase()
+    })
+    if (!o) return card
+    const a = o.attributes || o
+    return {
+      ...card,
+      name:    a.name    || card.name,
+      tagline: a.subtitle || card.tagline,
+      features: Array.isArray(a.features) && a.features.length ? a.features : card.features,
+    }
+  })
+}
+
+export default function OffresEntreprise({ offres = [] }) {
   const [period, setPeriod] = useState('m')
   const [modalSlug, setModalSlug] = useState(null)
 
@@ -118,7 +138,7 @@ export default function OffresEntreprise() {
           </div>
 
           <div className="entreprise-cards-grid">
-            {CARDS.map(card => {
+            {mergeCards(CARDS, offres).map(card => {
               const p = PRICING[card.slug][period]
               return (
                 <div key={card.slug} style={{ position: 'relative' }}>

@@ -1,5 +1,6 @@
 import PageHero from '@/components/PageHero'
 import OffresEntreprise from '@/components/OffresEntreprise'
+import { getOffresBySegment } from '@/lib/strapi'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 import SlaSection from '@/components/SlaSection'
@@ -67,7 +68,7 @@ export default async function EntreprisePage() {
         ]}
       />
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Entreprise sont faites pour vous si…" />
-      <OffresEntreprise />
+      <OffresEntreprise offres={offres} />
       <AddonsSection addons={ADDONS} color="var(--o)" title="Renforcez votre infrastructure" cols={4} />
       <SlaSection stats={SLA_STATS} color="var(--b)" bg="linear-gradient(160deg,#F0F2F8,#E8ECF4,#DEE4F0)" title="Nos engagements Entreprise" badge="SLA 99.9% · Contractuel" />
       <TrajectoireSection steps={TRAJECTOIRE} nextHref="/institution" nextLabel="Institution" color="var(--o)" />
