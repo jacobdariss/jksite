@@ -49,9 +49,9 @@ async function upsert(collection, filterKey, filterVal, data) {
 
 // ─── SEGMENTS ────────────────────────────────────────────────────────────────
 const SEGMENTS = [
-  { name: 'Startup', slug: 'startup' },
-  { name: 'Entreprise', slug: 'entreprise' },
-  { name: 'Institution', slug: 'institution' },
+  { name: 'Startup', slug: 'startup', number: '' },
+  { name: 'Entreprise', slug: 'entreprise', number: '' },
+  { name: 'Institution', slug: 'institution', number: '' },
 ]
 
 // ─── OFFRES ──────────────────────────────────────────────────────────────────
@@ -174,11 +174,11 @@ const OFFRES = {
 
 // ─── TÉMOIGNAGES ─────────────────────────────────────────────────────────────
 const TESTIMONIALS = [
-  { name: 'Amadou Diallo', role: 'DG — Agence Digitale Dakar', segment: 'Entreprise', rating: 5, color: '#E85D04', order: 1,
+  { name: 'Amadou Diallo', role: 'DG — Agence Digitale Dakar', rating: 5, color: '#E85D04', order: 1,
     text: "Depuis que nous sommes chez Jokko, zéro souci technique. L'équipe est réactive et comprend nos besoins locaux." },
-  { name: 'Fatou Ndiaye', role: 'DSI — Institution Publique', segment: 'Institution', rating: 5, color: '#6B4C9A', order: 2,
+  { name: 'Fatou Ndiaye', role: 'DSI — Institution Publique', rating: 5, color: '#6B4C9A', order: 2,
     text: "La souveraineté de nos données était non négociable. Jokko est le seul à offrir ça avec un SLA à pénalités." },
-  { name: 'Moussa Ba', role: 'CTO — Startup SaaS', segment: 'Startup', rating: 5, color: '#0D0D0D', order: 3,
+  { name: 'Moussa Ba', role: 'CTO — Startup SaaS', rating: 5, color: '#0D0D0D', order: 3,
     text: "Migration depuis OVH en 48h, zéro downtime. Le support local fait toute la différence." },
 ]
 
