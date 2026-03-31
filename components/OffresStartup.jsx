@@ -82,26 +82,51 @@ const INFO = (
 
 
 // Merge données Strapi avec données statiques
-function mergeCards(staticCards, offres) {
-  if (!offres || offres.length === 0) return staticCards
-  return staticCards.map(card => {
-    // Strapi retourne les offres normalisées avec 'nom' (via normalizeOffer)
+function formatPrix(n) {
+  if (!n) return null
+  return Number(n).toLocaleString('fr-FR')
+}
+
+function mergeCards(staticCards, offres, PRICING) {
+  if (!offres || offres.length === 0) return { cards: staticCards, pricing: PRICING }
+  
+  const newPricing = { ...PRICING }
+  
+  const cards = staticCards.map(card => {
     const o = offres.find(o => {
       const n = (o.nom || o.name || '').toLowerCase()
-      return n === card.name.toLowerCase()
+      return n === card.name.toLowerCase() || n === card.slug
     })
     if (!o) return card
+    
+    // Mise à jour des prix dans PRICING
+    if (o.prix && newPricing[card.slug]) {
+      const mensuel = o.prix.mensuel
+      const annuel  = o.prix.annuel
+      if (mensuel) {
+        newPricing[card.slug] = {
+          ...newPricing[card.slug],
+          m: { ...newPricing[card.slug].m, val: mensuel },
+          t: { ...newPricing[card.slug].t },
+          a: { ...newPricing[card.slug].a, val: annuel || mensuel },
+        }
+      }
+    }
+    
     return {
       ...card,
-      name:    o.nom     || card.name,
-      tagline: o.tagline || card.tagline,
+      name:     o.nom     || card.name,
+      tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
     }
   })
+  
+  return { cards, pricing: newPricing }
 }
 
 export default function OffresStartup({ offres = [] }) {
   const [period, setPeriod] = useState('m')
+  const { cards: MERGED_CARDS, pricing: MERGED_PRICING } = mergeCards(CARDS, offres, PRICING)
   const [modalSlug, setModalSlug] = useState(null)
 
   const PERIODS = [
@@ -140,8 +165,8 @@ export default function OffresStartup({ offres = [] }) {
 
           {/* Cards */}
           <div className="startup-cards-grid">
-            {mergeCards(CARDS, offres).map(card => {
-              const p = PRICING[card.slug][period]
+            {MERGED_CARDS.map(card => {
+              const p = MERGED_PRICING[card.slug]?.[period] || PRICING[card.slug][period]
               return (
                 <div key={card.slug} style={{ position: 'relative' }}>
                   {/* Popular border wrapper */}
