@@ -39,7 +39,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <Image src="/_assets/logos/jokko-icon.png" alt="Jokko" width={36} height={36} style={{ objectFit: 'contain' }} />
+            <Image src="/_assets/logos/jokko-logo-icon.png" alt="Jokko" width={42} height={42} style={{ objectFit: 'contain' }} />
             <div>
               <div style={{ fontFamily: 'var(--fd)', fontWeight: 700, fontSize: '1.1rem', lineHeight: 1 }}>
                 Jokko<span style={{ color: 'var(--o)' }}>Pro</span>
@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* Header panel */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24, paddingBottom: 20, borderBottom: '1px solid var(--bdl)' }}>
           <Link href="/" onClick={() => setOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Image src="/_assets/logos/jokko-icon.png" alt="Jokko" width={30} height={30} style={{ objectFit: 'contain' }} />
+            <Image src="/_assets/logos/jokko-logo-icon.png" alt="Jokko" width={30} height={30} style={{ objectFit: 'contain' }} />
             <span style={{ fontFamily: 'var(--fd)', fontWeight: 700, fontSize: '1rem' }}>
               Jokko<span style={{ color: 'var(--o)' }}>Pro</span>
             </span>
