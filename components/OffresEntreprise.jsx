@@ -123,6 +123,7 @@ function mergeCards(staticCards, offres, PRICING) {
       name:     o.nom     || card.name,
       tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
+      pid:      o.pid     ?? card.pid,
     }
   })
   

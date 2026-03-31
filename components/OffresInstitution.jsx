@@ -119,11 +119,20 @@ function mergeCards(staticCards, offres, PRICING) {
       }
     }
     
+    const pid = o.pid ?? null
+
+    // Reconstruire cta depuis le pid Strapi si disponible, sinon fallback statique
+    const cta = pid
+      ? { label: `Commander ${o.nom || card.name}`, href: `https://manage.jokko.africa/cart.php?a=add&pid=${pid}` }
+      : card.cta
+
     return {
       ...card,
       name:     o.nom     || card.name,
       tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
+      pid,
+      cta,
     }
   })
   
