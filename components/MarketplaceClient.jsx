@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 
-const MKT_URL = 'https://manage.jokko.africa/modules/addons/jokko_partner/api/marketplace.php'
+const MKT_URL = '/api/marketplace'
 const PER_PAGE = 9
 
 const CAT_COLORS = {
