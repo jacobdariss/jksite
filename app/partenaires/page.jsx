@@ -97,7 +97,7 @@ export default function PartenairesPage() {
               <h1 className="title">Un partenaire Jokko n&apos;est pas un revendeur. <em style={{ color: 'var(--o)', fontStyle: 'italic' }}>C&apos;est une extension de notre promesse.</em></h1>
               <p className="subtitle">Rejoignez un réseau de distribution structuré autour d&apos;une seule exigence : la continuité numérique de chaque client.</p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <a href="https://manage.jokko.africa/submitticket.php?step=2&deptid=1&subject=Candidature%20Partenaire" target="_blank" rel="noreferrer" className="btn btn-o btn-lg">Devenir partenaire →</a>
+                <a href="/partenaires/candidature" className="btn btn-o btn-lg">Devenir partenaire →</a>
                 <a href="#niveaux" className="btn btn-ol btn-lg">Voir les niveaux</a>
               </div>
             </div>
@@ -331,7 +331,8 @@ export default function PartenairesPage() {
               De l&apos;affiliation jusqu&apos;au statut Elite — votre croissance, mesurée et récompensée.
             </p>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://manage.jokko.africa/submitticket.php?step=2&deptid=1&subject=Candidature%20Partenaire" target="_blank" rel="noreferrer" className="btn btn-w btn-lg">Candidater maintenant →</a>
+              <a href="/partenaires/candidature" className="btn btn-w btn-lg">Candidater maintenant →</a>
+              <a href="/partenaires/marketplace" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.3)' }}>Explorer le marketplace</a>
               <a href="tel:+221338425735" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.3)' }}>+221 33 842 57 35</a>
               <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.25)' }}>WhatsApp</a>
             </div>

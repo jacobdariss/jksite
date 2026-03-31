@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Topbar from '@/components/Topbar'
 import CrispChat from '@/components/CrispChat'
+import AffiliateTracker from '@/components/AffiliateTracker'
 import ScrollRevealInit from '@/components/ScrollRevealInit'
 
 export const metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <CrispChat />
+      <AffiliateTracker />
         <ScrollRevealInit />
       </body>
     </html>
