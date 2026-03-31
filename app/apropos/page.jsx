@@ -16,7 +16,7 @@ const STATS = [
 ]
 
 const TEAM = [
-  { name: 'Papa Yankhoba Ndiaye', role: 'Président — DARISS CONSULTING', initials: 'PYN' },
+  { name: 'Direction Générale', role: 'Président — DARISS CONSULTING', initials: 'DG' },
   { name: 'Équipe Technique', role: 'Ingénieurs Cloud & Infrastructure', initials: 'ET' },
   { name: 'Support Client', role: 'Disponible 8h–18h GMT · 24/7 Institution', initials: 'SC' },
 ]
