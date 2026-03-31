@@ -15,7 +15,7 @@ export default function TestimonialsSection({ testimonials }) {
           <div className="label" style={{ justifyContent: 'center' }}>Témoignages</div>
           <h2 className="title">Ce que nos clients disent</h2>
         </div>
-        <div className="testi-grid">
+        <div className="testi-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {items.map((t, i) => {
             const text = t.text || t.attributes?.text
             const name = t.name || t.attributes?.name
