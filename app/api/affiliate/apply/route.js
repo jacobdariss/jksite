@@ -1,68 +1,97 @@
 import { NextResponse } from 'next/server'
 
-const APPLY_URL = 'https://manage.jokko.africa/modules/addons/jokko_partner/api/apply.php'
-const SECRET    = process.env.JPN_TRACKING_SECRET || ''
+// API REST officielle JPN v3.1.0 — POST /applications
+const JPN_API    = 'https://manage.jokko.africa/modules/addons/jokko_partner/api/index.php/applications'
+const JPN_TOKEN  = process.env.JPN_API_TOKEN || ''
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://api.jokko.africa'
+const STRAPI_TK  = process.env.STRAPI_API_TOKEN || ''
 
 export async function POST(req) {
   try {
     const body = await req.json()
 
-    let res, data
-
-    try {
-      res = await fetch(APPLY_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-JPN-Secret': SECRET,
-        },
-        body: JSON.stringify({ ...body, secret: SECRET }),
-      })
-      const text = await res.text()
-      console.log('[apply] WHMCS status:', res.status, 'body:', text.substring(0, 500))
+    // 1. Tenter l'API REST JPN (Bearer Token)
+    if (JPN_TOKEN) {
       try {
-        data = JSON.parse(text)
-      } catch {
-        // WHMCS not available or returned HTML — fallback to email notification
-        data = null
+        const res = await fetch(JPN_API, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${JPN_TOKEN}`,
+          },
+          body: JSON.stringify({
+            company_name:          body.company_name,
+            contact_name:          body.contact_name,
+            email:                 body.email,
+            phone:                 body.phone || '',
+            country:               body.country || 'Sénégal',
+            city:                  body.city || '',
+            desired_type:          body.desired_type || 'affiliate',
+            activity_description:  body.activity_description || '',
+            channel_description:   body.channel_description || '',
+            sector:                body.sector || '',
+            zone:                  body.zone || '',
+            has_legal_structure:   body.has_legal_structure ? 1 : 0,
+            has_experience:        body.has_experience ? 1 : 0,
+            accepts_conditions:    1,
+            source:                'nextjs',
+          }),
+        })
+        const text = await res.text()
+        console.log('[apply] JPN API status:', res.status, text.substring(0, 300))
+        if (res.ok) {
+          try {
+            const data = JSON.parse(text)
+            if (data.success || data.id) {
+              return NextResponse.json({
+                success: true,
+                message: "Votre candidature a bien été reçue. Notre équipe vous contactera sous 48h.",
+                ref: data.id || data.ref || '',
+              })
+            }
+          } catch {}
+        }
+      } catch (e) {
+        console.error('[apply] JPN API error:', e.message)
       }
-    } catch (fetchErr) {
-      console.error('[apply] WHMCS unreachable:', fetchErr.message)
-      data = null
     }
 
-    // Si WHMCS répond correctement
-    if (data && res.ok) {
-      return NextResponse.json(data)
-    }
+    // 2. Fallback : enregistrer dans Strapi Contact
+    if (STRAPI_TK) {
+      const msg = [
+        `Candidature partenaire`,
+        `Type: ${body.desired_type || '?'}`,
+        `Secteur: ${body.sector || '?'}`,
+        `Zone: ${body.zone || '?'}`,
+        `Activité: ${body.activity_description || '?'}`,
+        `Pays/Ville: ${body.country || '?'} / ${body.city || '?'}`,
+        `Structure légale: ${body.has_legal_structure ? 'Oui' : 'Non'}`,
+        `Expérience: ${body.has_experience ? 'Oui' : 'Non'}`,
+      ].join(' | ')
 
-    // Fallback : enregistrer dans Strapi Contact + retourner succès
-    const STRAPI_URL   = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://api.jokko.africa'
-    const STRAPI_TOKEN = process.env.STRAPI_API_TOKEN
-
-    if (STRAPI_TOKEN) {
       await fetch(`${STRAPI_URL}/api/contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${STRAPI_TOKEN}`,
+          Authorization: `Bearer ${STRAPI_TK}`,
         },
         body: JSON.stringify({
           data: {
-            name: body.contact_name || '',
-            email: body.email || '',
+            name:    body.contact_name || '',
+            email:   body.email || '',
             company: body.company_name || '',
-            phone: body.phone || '',
-            message: `Candidature partenaire - Type: ${body.desired_type || '?'} | Secteur: ${body.sector || '?'} | Zone: ${body.zone || '?'} | Activité: ${body.activity_description || '?'}`,
+            phone:   body.phone || '',
             subject: 'Candidature Partenaire',
+            message: msg,
+            publishedAt: new Date().toISOString(),
           },
         }),
-      }).catch(e => console.error('[apply] Strapi fallback error:', e.message))
+      }).catch(e => console.error('[apply] Strapi fallback:', e.message))
     }
 
     return NextResponse.json({
       success: true,
-      message: "Votre candidature a bien été reçue. Notre équipe vous contactera sous 48h à l'adresse " + (body.email || ''),
+      message: `Votre candidature a bien été reçue. Notre équipe vous contactera sous 48h à ${body.email}.`,
     })
 
   } catch (err) {
