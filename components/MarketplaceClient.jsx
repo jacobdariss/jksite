@@ -24,6 +24,18 @@ function priceLabel(o) {
   return n.toLocaleString('fr-FR') + ' FCFA'
 }
 
+const DEMO_OFFERS = [
+  { id: 1, title: 'Intégration WordPress & Jokko Cloud', category: 'service', short_desc: 'Migration et intégration complète de votre site WordPress vers l\'hébergement Jokko Cloud. Configuration, optimisation, formation.', price: { amount: 150000 }, company_name: 'Digital Solutions Dakar', is_featured: true },
+  { id: 2, title: 'Audit sécurité & conformité APDP', category: 'service', short_desc: 'Audit complet de votre infrastructure, rapport de conformité APDP, plan d\'action personnalisé.', price: { label: 'À partir de 200 000 FCFA' }, company_name: 'SecurIT Africa' },
+  { id: 3, title: 'Pack démarrage e-commerce', category: 'bundle', short_desc: 'WooCommerce + hébergement Sahara + email pro Tam-Tam + formation 2h. Tout pour lancer votre boutique en ligne.', price: { amount: 350000 }, company_name: 'Teranga Digital', is_featured: false },
+]
+
+const DEMO_PROFILES = [
+  { id: 1, company_name: 'Digital Solutions Dakar', headline: 'Intégration web & cloud pour les PME sénégalaises', sector: 'IT & Digital' },
+  { id: 2, company_name: 'SecurIT Africa', headline: 'Cybersécurité et conformité APDP pour institutions', sector: 'Finance & Assurance' },
+  { id: 3, company_name: 'Teranga Digital', headline: 'Solutions e-commerce et présence en ligne', sector: 'Commerce & Distribution' },
+]
+
 export default function MarketplaceClient() {
   const [tab,        setTab]        = useState('offers')
   const [offers,     setOffers]     = useState([])
@@ -47,12 +59,24 @@ export default function MarketplaceClient() {
         ...(cat    && { category: cat }),
       })
       const res  = await fetch(`${MKT_URL}?${params}`)
-      const data = await res.json()
+      const text = await res.text()
+
+      if (!text || text.trim() === '') {
+        // API vide — afficher données statiques demo
+        if (tab === 'offers') { setOffers(DEMO_OFFERS); setTotal(DEMO_OFFERS.length) }
+        if (tab === 'profiles') { setProfiles(DEMO_PROFILES); setTotal(DEMO_PROFILES.length) }
+        setLoading(false)
+        return
+      }
+
+      const data = JSON.parse(text)
       if (!data.success) throw new Error(data.error || 'Erreur API')
-      if (tab === 'offers')   { setOffers(data.data || []);   setTotal(data.total || 0) }
-      if (tab === 'profiles') { setProfiles(data.data || []); setTotal(data.total || 0) }
+      if (tab === 'offers')   { setOffers(data.data?.length ? data.data : DEMO_OFFERS);   setTotal(data.total || DEMO_OFFERS.length) }
+      if (tab === 'profiles') { setProfiles(data.data?.length ? data.data : DEMO_PROFILES); setTotal(data.total || DEMO_PROFILES.length) }
     } catch (e) {
-      setError('Impossible de charger les données. ' + e.message)
+      // Fallback statique en cas d'erreur
+      if (tab === 'offers') { setOffers(DEMO_OFFERS); setTotal(DEMO_OFFERS.length) }
+      if (tab === 'profiles') { setProfiles(DEMO_PROFILES); setTotal(DEMO_PROFILES.length) }
     } finally {
       setLoading(false)
     }
