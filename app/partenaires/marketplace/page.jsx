@@ -1,8 +1,8 @@
-import PartenaireMarketplace from '@/components/PartenaireMarketplace'
+import MarketplaceClient from '@/components/MarketplaceClient'
 
 export const metadata = {
   title: 'Marketplace Partenaires — Jokko Pro Africa',
-  description: "Découvrez les offres et services proposés par les partenaires du réseau Jokko Pro Africa.",
+  description: 'Découvrez les offres et services proposés par les partenaires du réseau Jokko Pro Africa.',
 }
 
 export default function MarketplacePage() {
@@ -18,15 +18,15 @@ export default function MarketplacePage() {
               <span style={{ color: '#ccc' }}>›</span>
               <strong>Marketplace</strong>
             </div>
-            <div className="label">Marketplace</div>
-            <h1 className="title">Les offres de nos partenaires.</h1>
-            <p className="subtitle">Services, produits et bundles proposés par le réseau Jokko Pro Africa.</p>
+            <div className="label">Réseau Jokko</div>
+            <h1 className="title">Marketplace Partenaires</h1>
+            <p className="subtitle">Découvrez les offres et services proposés par les membres du réseau Jokko Pro Africa.</p>
           </div>
         </div>
       </section>
-      <section style={{ padding: '64px 0', background: '#fff' }}>
+      <section style={{ padding: '56px 0 80px', background: '#fff' }}>
         <div className="container">
-          <PartenaireMarketplace defaultView="offers" />
+          <MarketplaceClient />
         </div>
       </section>
     </>
