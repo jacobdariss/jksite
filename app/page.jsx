@@ -7,7 +7,7 @@ import ValueCards from '@/components/ValueCards'
 import CounterSection from '@/components/CounterSection'
 import FaqSection from '@/components/FaqSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
-import { getTestimonials } from '@/lib/strapi'
+import { getTestimonials, getPartners } from '@/lib/strapi'
 
 export const metadata = {
   title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
@@ -50,7 +50,7 @@ const LOGOS = Array.from({length: 30}, (_, i) => `${i + 1}.png`)
 export const revalidate = 3600
 
 export default async function HomePage() {
-  const testimonials = await getTestimonials()
+  const [testimonials, partners] = await Promise.all([getTestimonials(), getPartners()])
   return (
     <>
       <HeroSlider />
@@ -157,9 +157,14 @@ export default async function HomePage() {
         <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
         <div style={{ overflow:'hidden' }}>
           <div className="marquee-track">
-            {[...LOGOS, ...LOGOS].map((l, i) => (
-              <img key={i} src={`/_assets/partenaires/${l}`} alt={`Partenaire ${l.replace('.png','')}`} />
-            ))}
+            {partners.length > 0
+              ? [...partners, ...partners].map((p, i) => (
+                  <img key={i} src={p.logo} alt={p.name} title={p.name} />
+                ))
+              : [...LOGOS, ...LOGOS].map((l, i) => (
+                  <img key={i} src={`/_assets/partenaires/${l}`} alt={`Partenaire ${l.replace('.png','')}`} />
+                ))
+            }
           </div>
         </div>
       </section>

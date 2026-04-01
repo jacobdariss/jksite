@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getSeoByPage } from '@/lib/strapi'
+import { getSeoByPage, getArticles } from '@/lib/strapi'
 
 export async function generateMetadata() {
   const seo = await getSeoByPage('blog')
@@ -9,57 +9,6 @@ export async function generateMetadata() {
     openGraph: { title: seo.ogTitle || seo.title, description: seo.ogDescription || seo.description, url: 'https://jokko.africa/blog', images: seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.png', width: 1200, height: 630 }] },
   }
 }
-
-async function getArticles() {
-  try {
-    const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'https://api.jokko.africa'
-    const res = await fetch(`${STRAPI_URL}/api/articles?sort=publishedAt:desc&populate=*`, {
-      headers: { Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}` },
-      next: { revalidate: 3600 },
-    })
-    if (!res.ok) throw new Error('fetch failed')
-    const data = await res.json()
-    return data.data || []
-  } catch {
-    return STATIC_ARTICLES
-  }
-}
-
-const STATIC_ARTICLES = [
-  {
-    id: 1,
-    attributes: {
-      title: "Pourquoi héberger au Sénégal plutôt qu'en Europe en 2026",
-      slug: 'heberger-senegal-vs-europe-2026',
-      excerpt: "Souveraineté des données, latence, conformité APDP, coûts réels — le comparatif complet pour les entreprises sénégalaises.",
-      category: 'Hébergement',
-      readTime: 6,
-      publishedAt: '2026-02-15',
-    },
-  },
-  {
-    id: 2,
-    attributes: {
-      title: "SLA contractuel vs best effort : quelle différence pour votre activité ?",
-      slug: 'sla-contractuel-vs-best-effort',
-      excerpt: "Un SLA avec pénalités, c'est quoi concrètement ? Ce que ça change pour votre continuité numérique.",
-      category: 'Cloud',
-      readTime: 4,
-      publishedAt: '2026-02-28',
-    },
-  },
-  {
-    id: 3,
-    attributes: {
-      title: "Migration vers le cloud souverain : guide pratique pour les PME",
-      slug: 'migration-cloud-souverain-pme',
-      excerpt: "De l'audit technique à la mise en production — les 5 étapes pour migrer sans downtime ni perte de données.",
-      category: 'Migration',
-      readTime: 8,
-      publishedAt: '2026-03-10',
-    },
-  },
-]
 
 const CATEGORY_COLORS = {
   'Hébergement': { bg: '#FFF7EE', color: '#E85D04' },
@@ -94,9 +43,8 @@ export default async function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             {articles.map((a, i) => {
-              const attr = a.attributes || a
-              const cat = CATEGORY_COLORS[attr.category] || { bg: '#F5F5F5', color: '#444' }
-              const date = new Date(attr.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+              const cat = CATEGORY_COLORS[a.category] || { bg: '#F5F5F5', color: '#444' }
+              const date = new Date(a.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
               return (
                 <Link key={a.id} href={`/blog/${attr.slug}`} className={`hover-lift reveal reveal-delay-${i % 3}`}
                   style={{ background: '#fff', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', overflow: 'hidden', display: 'block', textDecoration: 'none', color: 'inherit' }}>
