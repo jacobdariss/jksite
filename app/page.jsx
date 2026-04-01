@@ -175,23 +175,6 @@ export default async function HomePage() {
 
       <PaymentBloc />
 
-      {/* Marquee logos */}
-      <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
-        <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
-        <div style={{ overflow:'hidden' }}>
-          <div className="marquee-track">
-            {partners.length > 0
-              ? [...partners, ...partners, ...partners, ...partners].map((p, i) => (
-                  <img key={i} src={p.logo} alt={p.name} title={p.name} />
-                ))
-              : [...LOGOS, ...LOGOS].map((l, i) => (
-                  <img key={i} src={`/_assets/partenaires/${l}`} alt={`Partenaire ${l.replace('.png','')}`} />
-                ))
-            }
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section style={{ padding:'80px 0', background:'#fff' }}>
         <div className="container">
@@ -219,6 +202,23 @@ export default async function HomePage() {
           </div>
         </div>
         <style>{`.faq-grid details[open] summary span{transform:rotate(45deg)} .faq-grid details summary span{transition:transform .2s} @media(max-width:768px){.faq-grid{grid-template-columns:1fr!important}}`}</style>
+      </section>
+
+      {/* Marquee logos */}
+      <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
+        <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
+        <div style={{ overflow:'hidden' }}>
+          <div className="marquee-track">
+            {partners.length > 0
+              ? [...partners, ...partners, ...partners, ...partners].map((p, i) => (
+                  <img key={i} src={p.logo} alt={p.name} title={p.name} />
+                ))
+              : [...LOGOS, ...LOGOS].map((l, i) => (
+                  <img key={i} src={`/_assets/partenaires/${l}`} alt={`Partenaire ${l.replace('.png','')}`} />
+                ))
+            }
+          </div>
+        </div>
       </section>
 
       {/* CTA Final */}
