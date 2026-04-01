@@ -205,8 +205,8 @@ export default async function HomePage() {
       <CounterSection />
 
       {/* Marquee logos */}
-      <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
-        <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
+      <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'#F8F8F6' }}>
+        <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bm)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
         <div style={{ overflow:'hidden' }}>
           <div className="marquee-track">
             {partners.length > 0
