@@ -193,7 +193,36 @@ export default async function HomePage() {
       {/* CTA */}
       <section style={{ padding:'80px 0', background:'#fff' }}>
         <div className="container">
-          <div style={{ background:'linear-gradient(135deg,var(--o),var(--ol))',borderRadius:'var(--rx)',padding:'56px 48px',textAlign:'center',color:'#fff',position:'relative',overflow:'hidden' }}>
+      {/* FAQ */}
+      <section style={{ padding:'80px 0', background:'#fff' }}>
+        <div className="container">
+          <div className="reveal" style={{ textAlign:'center', marginBottom:48 }}>
+            <div className="label" style={{ justifyContent:'center' }}>FAQ</div>
+            <h2 className="title">Questions fréquentes</h2>
+          </div>
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:32 }} className="faq-grid">
+            {FAQS.map((f, i) => (
+              <details key={i} style={{ border:'1px solid var(--bd)', borderRadius:'var(--rx)', overflow:'hidden', background:'#fff' }}>
+                <summary style={{ padding:'16px 20px', cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'space-between', fontFamily:'var(--fd)', fontSize:'.92rem', fontWeight:600, color:'var(--b)', listStyle:'none', userSelect:'none' }}>
+                  {f.q}
+                  <span style={{ width:28, height:28, minWidth:28, borderRadius:'50%', background:'var(--obg2)', color:'var(--o)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'1.1rem', fontWeight:400 }}>+</span>
+                </summary>
+                <div style={{ padding:'0 20px 16px', fontSize:'.88rem', color:'var(--bs)', lineHeight:1.7 }}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+          <div style={{ textAlign:'center' }}>
+            <a href="https://help.jokko.africa" target="_blank" rel="noreferrer"
+              style={{ display:'inline-flex', alignItems:'center', gap:8, padding:'12px 24px', border:'1.5px solid var(--bd)', borderRadius:999, fontSize:'.88rem', fontWeight:600, color:'var(--b)', textDecoration:'none' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--o)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Base de connaissances →
+            </a>
+          </div>
+        </div>
+        <style>{`.faq-grid details[open] summary span{transform:rotate(45deg)} .faq-grid details summary span{transition:transform .2s} @media(max-width:768px){.faq-grid{grid-template-columns:1fr!important}}`}</style>
+      </section>
+
+      {/* CTA Final */}
             <div style={{ position:'absolute',top:-50,right:-50,width:200,height:200,borderRadius:'50%',background:'rgba(255,255,255,.08)' }} />
             <h2 style={{ fontFamily:'var(--fd)',fontSize:'clamp(1.6rem,3vw,2.4rem)',fontWeight:700,marginBottom:10 }}>Qui assume votre continuité numérique ?</h2>
             <p style={{ fontSize:'.98rem',color:'rgba(255,255,255,.85)',margin:'0 auto 24px',maxWidth:460 }}>
