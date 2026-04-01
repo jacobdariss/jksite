@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-const APPLY_URL = 'https://manage.jokko.africa/modules/addons/jokko_partner/api/apply.php'
+const APPLY_URL = '/api/candidature'
 
 const TYPES = [
   { key: 'affiliate',     icon: '🔗', label: 'Affilié',        desc: 'Recommandez & gagnez des commissions' },
@@ -73,7 +73,7 @@ export default function PartenaireCandidatureForm() {
         method: 'POST',
         mode: 'cors',
         credentials: 'omit',
-        headers: { 'Content-Type': 'application/json', 'X-JPN-Secret': process.env.NEXT_PUBLIC_JPN_TRACKING_SECRET || '' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, source: 'nextjs' }),
       })
       const data = await res.json()
