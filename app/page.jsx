@@ -171,6 +171,8 @@ export default async function HomePage() {
 
             <TestimonialsSection testimonials={testimonials} />
 
+      <PaymentBloc />
+
       {/* Marquee logos */}
       <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
         <div style={{ fontSize:'.65rem',fontWeight:700,textTransform:'uppercase',letterSpacing:'2px',color:'var(--bf)',textAlign:'center',marginBottom:14 }}>Ils nous font confiance</div>
