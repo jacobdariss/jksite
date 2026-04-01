@@ -150,15 +150,15 @@ export default async function HomePage() {
               <div className="label">Pourquoi Jokko</div>
               <h2 className="title">Pourquoi Jokko, pas un géant global ?</h2>
               <p style={{ fontSize:'.95rem',color:'var(--bs)',marginBottom:24,fontStyle:'italic' }}>Les grands acteurs sont puissants. Mais ils ne sont pas responsables de votre contexte.</p>
-              <div style={{ display:'flex',flexDirection:'column',gap:14 }}>
+              <div style={{ display:'flex',flexDirection:'column',gap:10 }}>
                 {WHY.map(w => (
-                  <div key={w.title} style={{ display:'flex',alignItems:'flex-start',gap:14 }}>
-                    <div style={{ width:42,height:42,minWidth:42,borderRadius:12,background:'var(--obg2)',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--o)' }}>
+                  <div key={w.title} className="hover-lift" style={{ display:'flex',alignItems:'center',gap:16,padding:'16px 18px',background:'#fff',border:'1px solid var(--bd)',borderRadius:14,boxShadow:'0 2px 8px rgba(0,0,0,.04)' }}>
+                    <div style={{ width:44,height:44,minWidth:44,borderRadius:12,background:'var(--obg2)',display:'flex',alignItems:'center',justifyContent:'center',color:'var(--o)',flexShrink:0 }}>
                       {w.icon}
                     </div>
                     <div>
-                      <h4 style={{ fontFamily:'var(--fd)',fontSize:'.95rem',fontWeight:700,marginBottom:3 }}>{w.title}</h4>
-                      <p style={{ fontSize:'.84rem',color:'var(--bs)' }}>{w.desc}</p>
+                      <h4 style={{ fontFamily:'var(--fd)',fontSize:'.95rem',fontWeight:700,marginBottom:2,color:'var(--b)' }}>{w.title}</h4>
+                      <p style={{ fontSize:'.82rem',color:'var(--bs)',margin:0 }}>{w.desc}</p>
                     </div>
                   </div>
                 ))}
