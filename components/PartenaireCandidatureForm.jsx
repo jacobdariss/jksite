@@ -73,7 +73,7 @@ export default function PartenaireCandidatureForm() {
         method: 'POST',
         mode: 'cors',
         credentials: 'omit',
-        headers: { 'Content-Type': 'application/json', 'X-JPN-Secret': process.env.NEXT_PUBLIC_TRACKING_SECRET || '' },
+        headers: { 'Content-Type': 'application/json', 'X-JPN-Secret': process.env.NEXT_PUBLIC_JPN_TRACKING_SECRET || '' },
         body: JSON.stringify({ ...form, source: 'nextjs' }),
       })
       const data = await res.json()
