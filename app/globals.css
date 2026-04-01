@@ -115,13 +115,13 @@ img { max-width: 100%; display: block; }
 /* ─── Logo Marquee ────────────────────────────────────────────────────────── */
 .marquee-track {
   display: flex;
-  gap: 56px;
+  gap: 64px;
   align-items: center;
-  animation: mq 20s linear infinite;
+  animation: mq 30s linear infinite;
   width: max-content;
 }
 .marquee-track img {
-  height: 36px;
+  height: 48px;
   opacity: .85;
   filter: none;
   transition: opacity .3s;
