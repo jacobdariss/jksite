@@ -9,8 +9,8 @@ import ScrollRevealInit from '@/components/ScrollRevealInit'
 
 export const metadata = {
   metadataBase: new URL('https://jokko.africa'),
-  title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
-  description: 'Hébergement cloud souverain pour Startups, Entreprises et Institutions. Datacenter Tier III+ à Dakar. Dès 2 000 FCFA/mois.',
+  title: 'Jokko Pro Africa — Le 1er Hébergement Cloud 100% Souverain du Sénégal',
+  description: 'Hébergement cloud souverain pour Startups, Entreprises et Institutions au Sénégal. Datacenter Tier III+ à Dakar. Conformité APDP. Dès 2 000 FCFA/mois.',
   keywords: 'hébergement sénégal, cloud souverain, datacenter dakar, jokko pro africa',
   openGraph: {
     title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
