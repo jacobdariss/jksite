@@ -27,7 +27,7 @@ const CARDS = [
     tagline: "Hébergement pro souverain",
     bg: '#F2F4F8',
     popular: false,
-    pid: 4,
+    whmcsId: 4,
     features: [
       '2 vCPU dédiés · 4 Go RAM · 40 Go NVMe',
       '500 Go trafic · Domaine .SN inclus',
@@ -43,7 +43,7 @@ const CARDS = [
     bg: '#E8EBF4',
     popular: true,
     popularLabel: 'Recommandé',
-    pid: 5,
+    whmcsId: 5,
     features: [
       '2 vCPU dédiés · 4 Go RAM · 50 Go NVMe',
       'Multi-stacks Node, Python, PHP, Java',
@@ -58,7 +58,7 @@ const CARDS = [
     tagline: 'Cloud privé, votre contrôle',
     bg: '#F2F4F8',
     popular: false,
-    pid: 6,
+    whmcsId: 6,
     features: [
       '4 vCPU dédiés · 8 Go RAM · 100 Go NVMe',
       '1 To trafic · VPC dédié isolé',
@@ -123,7 +123,7 @@ function mergeCards(staticCards, offres, PRICING) {
       name:     o.nom     || card.name,
       tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
-      pid:      o.pid     ?? card.pid,
+      whmcsId:  o.whmcsId ?? card.whmcsId,
     }
   })
   
@@ -215,7 +215,7 @@ export default function OffresEntreprise({ offres = [] }) {
                         ))}
                       </div>
 
-                      <a href={`https://manage.jokko.africa/cart.php?a=add&pid=${card.pid}`} target="_blank" rel="noreferrer"
+                      <a href={`https://manage.jokko.africa/cart.php?a=add&pid=${card.whmcsId}`} target="_blank" rel="noreferrer"
                         style={{ display: 'block', textAlign: 'center', padding: '13px 20px', background: '#E85D04', color: '#fff', fontWeight: 700, fontSize: '.88rem', borderRadius: 10, textDecoration: 'none' }}>
                         Commander {card.name}
                       </a>

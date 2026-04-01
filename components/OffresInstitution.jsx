@@ -119,11 +119,11 @@ function mergeCards(staticCards, offres, PRICING) {
       }
     }
     
-    const pid = o.pid ?? null
+    const whmcsId = o.whmcsId ?? null
 
     // Reconstruire cta depuis le pid Strapi si disponible, sinon fallback statique
-    const cta = pid
-      ? { label: `Commander ${o.nom || card.name}`, href: `https://manage.jokko.africa/cart.php?a=add&pid=${pid}` }
+    const cta = whmcsId
+      ? { label: `Commander ${o.nom || card.name}`, href: `https://manage.jokko.africa/cart.php?a=add&pid=${whmcsId}` }
       : card.cta
 
     return {
@@ -131,7 +131,7 @@ function mergeCards(staticCards, offres, PRICING) {
       name:     o.nom     || card.name,
       tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
-      pid,
+      whmcsId,
       cta,
     }
   })
