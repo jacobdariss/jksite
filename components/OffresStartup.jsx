@@ -27,7 +27,7 @@ const CARDS = [
     tagline: 'Votre premier site, zéro stress',
     bg: '#FFF7EE',
     popular: false,
-    whmcsId: 1,
+    pid: 1,
     features: [
       '1 vCPU · 1 Go RAM · 10 Go SSD',
       '100 Go trafic · SSL inclus',
@@ -42,7 +42,7 @@ const CARDS = [
     tagline: 'WordPress optimisé, trafic garanti',
     bg: '#FFF0DC',
     popular: true,
-    whmcsId: 2,
+    pid: 2,
     features: [
       '1 vCPU · 2 Go RAM · 20 Go NVMe',
       '200 Go trafic · WordPress préinstallé',
@@ -57,7 +57,7 @@ const CARDS = [
     tagline: 'Cloud solidaire — ONG & Associations',
     bg: '#FFF7EE',
     popular: false,
-    whmcsId: 3,
+    pid: 3,
     features: [
       '2 vCPU · 2 Go RAM · 30 Go SSD',
       '300 Go trafic · Multi-sites (3 projets)',
@@ -116,7 +116,7 @@ function mergeCards(staticCards, offres, PRICING) {
       name:     o.nom     || card.name,
       tagline:  o.tagline || card.tagline,
       features: Array.isArray(o.features) && o.features.length ? o.features : card.features,
-      whmcsId:  o.whmcsId ?? card.whmcsId,
+      pid: o.pid ?? card.pid,
     }
   })
   
@@ -229,7 +229,7 @@ export default function OffresStartup({ offres = [] }) {
                       </div>
 
                       {/* CTA */}
-                      <a href={`https://manage.jokko.africa/cart.php?a=add&pid=${card.whmcsId}`} target="_blank" rel="noreferrer"
+                      <a href={`https://manage.jokko.africa/cart.php?a=add&pid=${card.pid}`} target="_blank" rel="noreferrer"
                         style={{ display: 'block', textAlign: 'center', padding: '13px 20px', background: '#E85D04', color: '#fff', fontWeight: 700, fontSize: '.88rem', borderRadius: 10, textDecoration: 'none' }}>
                         Commander {card.name}
                       </a>
