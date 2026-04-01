@@ -137,7 +137,7 @@ export default function OffresStartup({ offres = [] }) {
 
   return (
     <>
-      <section id="offres" style={{ padding: '72px 0', background: 'var(--ow)' }}>
+      <section id="offres" style={{ padding: '72px 0', background: '#FAFAF8' }}>
         <div className="container">
           {/* Header */}
           <div className="reveal" style={{ textAlign: 'center', marginBottom: 4 }}>
