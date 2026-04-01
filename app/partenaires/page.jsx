@@ -1,6 +1,12 @@
-export const metadata = {
-  title: 'Programme Partenaires — Jokko Pro Africa',
-  description: 'Rejoignez le réseau de partenaires Jokko. 5 niveaux, commissions progressives, co-marketing. Affilié, Revendeur, Intégrateur ou Institutionnel.',
+import { getSeoByPage } from '@/lib/strapi'
+
+export async function generateMetadata() {
+  const seo = await getSeoByPage('partenaires')
+  return {
+    title: seo.title, description: seo.description, keywords: seo.keywords,
+    alternates: { canonical: 'https://jokko.africa/partenaires' },
+    openGraph: { title: seo.ogTitle || seo.title, description: seo.ogDescription || seo.description, url: 'https://jokko.africa/partenaires', images: seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.png', width: 1200, height: 630 }] },
+  }
 }
 
 const TYPES = [

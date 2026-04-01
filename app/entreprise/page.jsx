@@ -1,20 +1,23 @@
 import PageHero from '@/components/PageHero'
 import OffresEntreprise from '@/components/OffresEntreprise'
-import { getOffresBySegment } from '@/lib/strapi'
+import { getOffresBySegment, getSeoByPage } from '@/lib/strapi'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 
-export const metadata = {
-  title: 'Hébergement Entreprise Sénégal — Baobab, Fondation, Savane | Jokko Pro Africa',
-  description: 'Hébergement cloud pro souverain pour PME, agences et e-commerce au Sénégal. SLA contractuel, backups quotidiens, support Email+Tél. Dès 12 500 FCFA/mois.',
-  keywords: 'hébergement PME sénégal, cloud entreprise dakar, hébergement pro afrique, SLA sénégal, cloud privé dakar',
-  alternates: { canonical: 'https://jokko.africa/entreprise' },
-  openGraph: {
-    title: 'Hébergement Entreprise Sénégal — SLA Contractuel | Jokko',
-    description: 'Baobab, Fondation, Savane — cloud souverain pour PME et agences. 99,9% uptime, support réactif, infrastructure 100% Sénégal.',
-    url: 'https://jokko.africa/entreprise',
-    images: [{ url: '/og-entreprise.png', width: 1200, height: 630 }],
-  },
+export async function generateMetadata() {
+  const seo = await getSeoByPage('entreprise')
+  return {
+    title:       seo.title,
+    description: seo.description,
+    keywords:    seo.keywords,
+    alternates:  { canonical: 'https://jokko.africa/entreprise' },
+    openGraph: {
+      title:       seo.ogTitle       || seo.title,
+      description: seo.ogDescription || seo.description,
+      url:         'https://jokko.africa/entreprise',
+      images:      seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-entreprise.png', width: 1200, height: 630 }],
+    },
+  }
 }
 import SlaSection from '@/components/SlaSection'
 import TrajectoireSection from '@/components/TrajectoireSection'

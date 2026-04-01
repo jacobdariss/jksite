@@ -1,20 +1,23 @@
 import PageHero from '@/components/PageHero'
 import OffresInstitution from '@/components/OffresInstitution'
-import { getOffresBySegment } from '@/lib/strapi'
+import { getOffresBySegment, getSeoByPage } from '@/lib/strapi'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
 
-export const metadata = {
-  title: 'Cloud Souverain Institutions Sénégal — Héritage, Forteresse, Kilimandjaro | Jokko Pro Africa',
-  description: 'Infrastructure cloud souveraine pour institutions publiques, banques et opérateurs au Sénégal. Conformité APDP, SLA avec pénalités, support 24/7 dédié. Datacenter Tier III+ Dakar.',
-  keywords: 'cloud souverain sénégal, hébergement institution publique, conformité APDP, datacenter dakar, cloud banque sénégal',
-  alternates: { canonical: 'https://jokko.africa/institution' },
-  openGraph: {
-    title: 'Cloud Souverain Institutions Sénégal — SLA + Pénalités | Jokko',
-    description: 'Héritage, Forteresse, Kilimandjaro — souveraineté totale, conformité APDP, 99,95% uptime garanti par contrat.',
-    url: 'https://jokko.africa/institution',
-    images: [{ url: '/og-institution.png', width: 1200, height: 630 }],
-  },
+export async function generateMetadata() {
+  const seo = await getSeoByPage('institution')
+  return {
+    title:       seo.title,
+    description: seo.description,
+    keywords:    seo.keywords,
+    alternates:  { canonical: 'https://jokko.africa/institution' },
+    openGraph: {
+      title:       seo.ogTitle       || seo.title,
+      description: seo.ogDescription || seo.description,
+      url:         'https://jokko.africa/institution',
+      images:      seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-institution.png', width: 1200, height: 630 }],
+    },
+  }
 }
 import SlaSection from '@/components/SlaSection'
 import FaqSection from '@/components/FaqSection'

@@ -1,8 +1,13 @@
 import Link from 'next/link'
+import { getSeoByPage } from '@/lib/strapi'
 
-export const metadata = {
-  title: 'Services & Add-ons — Jokko Pro Africa',
-  description: 'Email pro, SMS, sécurité, monitoring, support — des services qui s\'ajoutent à n\'importe quelle offre Jokko.',
+export async function generateMetadata() {
+  const seo = await getSeoByPage('services')
+  return {
+    title: seo.title, description: seo.description, keywords: seo.keywords,
+    alternates: { canonical: 'https://jokko.africa/services' },
+    openGraph: { title: seo.ogTitle || seo.title, description: seo.ogDescription || seo.description, url: 'https://jokko.africa/services', images: seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.png', width: 1200, height: 630 }] },
+  }
 }
 
 const ADDONS = {

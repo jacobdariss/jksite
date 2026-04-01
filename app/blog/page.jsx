@@ -1,8 +1,13 @@
 import Link from 'next/link'
+import { getSeoByPage } from '@/lib/strapi'
 
-export const metadata = {
-  title: 'Blog — Jokko Pro Africa',
-  description: 'Actualités, guides et conseils sur le cloud souverain, l\'hébergement au Sénégal et la continuité numérique.',
+export async function generateMetadata() {
+  const seo = await getSeoByPage('blog')
+  return {
+    title: seo.title, description: seo.description, keywords: seo.keywords,
+    alternates: { canonical: 'https://jokko.africa/blog' },
+    openGraph: { title: seo.ogTitle || seo.title, description: seo.ogDescription || seo.description, url: 'https://jokko.africa/blog', images: seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.png', width: 1200, height: 630 }] },
+  }
 }
 
 async function getArticles() {
