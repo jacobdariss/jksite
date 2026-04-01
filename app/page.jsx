@@ -136,11 +136,10 @@ export default async function HomePage() {
             <p style={{ fontSize:'.95rem',color:'var(--bs)',fontStyle:'italic' }}>« Le vrai risque, ce n&apos;est pas la panne. C&apos;est l&apos;absence de responsabilité. »</p>
           </div>
           <ValueCards />
+        </div>
       </section>
 
       <CounterSection />
-        </div>
-      </section>
 
       {/* Why Jokko */}
       <section style={{ padding:'80px 0', background:'var(--ow)' }}>
