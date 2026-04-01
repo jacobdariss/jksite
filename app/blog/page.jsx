@@ -46,18 +46,18 @@ export default async function BlogPage() {
               const cat = CATEGORY_COLORS[a.category] || { bg: '#F5F5F5', color: '#444' }
               const date = new Date(a.publishedAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
               return (
-                <Link key={a.id} href={`/blog/${attr.slug}`} className={`hover-lift reveal reveal-delay-${i % 3}`}
+                <Link key={a.id} href={`/blog/${a.slug}`} className={`hover-lift reveal reveal-delay-${i % 3}`}
                   style={{ background: '#fff', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', overflow: 'hidden', display: 'block', textDecoration: 'none', color: 'inherit' }}>
                   <div style={{ height: 8, background: `linear-gradient(90deg,var(--o),var(--ol))` }} />
                   <div style={{ padding: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
                       <span style={{ background: cat.bg, color: cat.color, fontSize: '.65rem', fontWeight: 800, padding: '3px 10px', borderRadius: 999, textTransform: 'uppercase', letterSpacing: '1px' }}>
-                        {attr.category}
+                        {a.category}
                       </span>
-                      <span style={{ fontSize: '.72rem', color: 'var(--bm)' }}>{attr.readTime} min de lecture</span>
+                      <span style={{ fontSize: '.72rem', color: 'var(--bm)' }}>{a.readTime} min de lecture</span>
                     </div>
-                    <h2 style={{ fontFamily: 'var(--fd)', fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.35, marginBottom: 12, color: 'var(--b)' }}>{attr.title}</h2>
-                    <p style={{ fontSize: '.84rem', color: 'var(--bs)', lineHeight: 1.6, marginBottom: 20 }}>{attr.excerpt}</p>
+                    <h2 style={{ fontFamily: 'var(--fd)', fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.35, marginBottom: 12, color: 'var(--b)' }}>{a.title}</h2>
+                    <p style={{ fontSize: '.84rem', color: 'var(--bs)', lineHeight: 1.6, marginBottom: 20 }}>{a.excerpt}</p>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <span style={{ fontSize: '.72rem', color: 'var(--bm)' }}>{date}</span>
                       <span style={{ fontSize: '.82rem', color: 'var(--o)', fontWeight: 700 }}>Lire l'article →</span>
