@@ -21,9 +21,9 @@ const COLS = [
   {
     title: 'Segments',
     links: [
-      { label: 'Startup B2C', href: '/startup' },
-      { label: 'Entreprise B2B', href: '/entreprise' },
-      { label: 'Institution B2G', href: '/institution' },
+      { label: 'Startup', href: '/startup' },
+      { label: 'Entreprise', href: '/entreprise' },
+      { label: 'Institution', href: '/institution' },
     ],
   },
   {
