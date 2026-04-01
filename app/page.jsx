@@ -7,11 +7,25 @@ import ValueCards from '@/components/ValueCards'
 import CounterSection from '@/components/CounterSection'
 import FaqSection from '@/components/FaqSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
-import { getTestimonials, getPartners } from '@/lib/strapi'
+import { getTestimonials, getPartners, getSeoByPage } from '@/lib/strapi'
 
-export const metadata = {
-  title: 'Jokko Pro Africa — Le 1er Cloud 100% Sénégalais',
-  description: 'Hébergement cloud souverain pour Startups, Entreprises et Institutions. Datacenter Tier III+ à Dakar. Dès 2 000 FCFA/mois.',
+export async function generateMetadata() {
+  const seo = await getSeoByPage('home')
+  return {
+    title:       seo.title,
+    description: seo.description,
+    keywords:    seo.keywords,
+    alternates:  { canonical: 'https://jokko.africa' },
+    openGraph: {
+      title:       seo.ogTitle       || seo.title,
+      description: seo.ogDescription || seo.description,
+      url:         'https://jokko.africa',
+      siteName:    'Jokko Pro Africa',
+      locale:      'fr_SN',
+      type:        'website',
+      images:      seo.ogImage ? [{ url: seo.ogImage, width: 1200, height: 630 }] : [{ url: '/og-image.png', width: 1200, height: 630 }],
+    },
+  }
 }
 
 const DC_STATS = [
