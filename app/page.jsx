@@ -192,9 +192,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ padding:'80px 0', background:'#fff' }}>
-        <div className="container">
       {/* FAQ */}
       <section style={{ padding:'80px 0', background:'#fff' }}>
         <div className="container">
@@ -225,6 +222,9 @@ export default async function HomePage() {
       </section>
 
       {/* CTA Final */}
+      <section style={{ padding:'80px 0', background:'#fff' }}>
+        <div className="container">
+          <div style={{ background:'linear-gradient(135deg,var(--o),var(--ol))',borderRadius:'var(--rx)',padding:'56px 48px',textAlign:'center',color:'#fff',position:'relative',overflow:'hidden' }}>
             <div style={{ position:'absolute',top:-50,right:-50,width:200,height:200,borderRadius:'50%',background:'rgba(255,255,255,.08)' }} />
             <h2 style={{ fontFamily:'var(--fd)',fontSize:'clamp(1.6rem,3vw,2.4rem)',fontWeight:700,marginBottom:10 }}>Qui assume votre continuité numérique ?</h2>
             <p style={{ fontSize:'.98rem',color:'rgba(255,255,255,.85)',margin:'0 auto 24px',maxWidth:460 }}>
