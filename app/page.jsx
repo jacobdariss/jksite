@@ -172,7 +172,7 @@ export default async function HomePage() {
         <div style={{ overflow:'hidden' }}>
           <div className="marquee-track">
             {partners.length > 0
-              ? [...partners, ...partners].map((p, i) => (
+              ? [...partners, ...partners, ...partners, ...partners].map((p, i) => (
                   <img key={i} src={p.logo} alt={p.name} title={p.name} />
                 ))
               : [...LOGOS, ...LOGOS].map((l, i) => (
