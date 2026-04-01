@@ -33,6 +33,7 @@
 
 html { overflow-x: clip; }
 body { overflow-x: hidden; }
+@media(max-width:900px) { body { padding-top: 64px; } }
 
 html { scroll-behavior: smooth; }
 

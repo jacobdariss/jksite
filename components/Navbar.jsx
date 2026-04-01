@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav style={{
+      <nav className="jokko-navbar" style={{
         position: 'sticky', top: 0, zIndex: 100,
         background: 'rgba(255,255,255,.97)',
         backdropFilter: 'blur(12px)',
@@ -150,6 +150,7 @@ export default function Navbar() {
         @media(max-width:900px) {
           .nav-desktop, .nav-cta { display: none !important; }
           .hamburger { display: flex !important; }
+          .jokko-navbar { position: fixed !important; top: 0; left: 0; right: 0; width: 100%; }
         }
         @media(max-width:320px) {
           .mobile-panel { width: 100vw; right: -100vw; }
