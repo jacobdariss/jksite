@@ -27,7 +27,7 @@ const CARDS = [
     tagline: 'Votre premier site, zéro stress',
     bg: '#FFF7EE',
     popular: false,
-    pid: 1,
+    pid: 142,
     features: [
       '1 vCPU · 1 Go RAM · 10 Go SSD',
       '100 Go trafic · SSL inclus',
@@ -42,7 +42,7 @@ const CARDS = [
     tagline: 'WordPress optimisé, trafic garanti',
     bg: '#FFF0DC',
     popular: true,
-    pid: 2,
+    pid: 143,
     features: [
       '1 vCPU · 2 Go RAM · 20 Go NVMe',
       '200 Go trafic · WordPress préinstallé',
@@ -57,7 +57,7 @@ const CARDS = [
     tagline: 'Cloud solidaire — ONG & Associations',
     bg: '#FFF7EE',
     popular: false,
-    pid: 3,
+    pid: 144,
     features: [
       '2 vCPU · 2 Go RAM · 30 Go SSD',
       '300 Go trafic · Multi-sites (3 projets)',

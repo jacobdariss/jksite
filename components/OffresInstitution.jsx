@@ -29,7 +29,7 @@ const CARDS = [
     tagline: 'Archivage souverain certifié',
     bg: '#F8F4FF',
     popular: false,
-    cta: { label: 'Commander Héritage', href: 'https://manage.jokko.africa/cart.php?a=add&pid=7' },
+    cta: { label: 'Commander Héritage', href: 'https://manage.jokko.africa/cart.php?a=add&pid=148' },
     features: [
       '500 Go chiffré AES-256',
       'Réplication multi-site Sénégal',
@@ -44,7 +44,7 @@ const CARDS = [
     tagline: 'Plan de reprise certifié',
     bg: '#F0E8FF',
     popular: true,
-    cta: { label: 'Commander Forteresse', href: 'https://manage.jokko.africa/cart.php?a=add&pid=8' },
+    cta: { label: 'Commander Forteresse', href: 'https://manage.jokko.africa/cart.php?a=add&pid=149' },
     features: [
       'PRA documenté et testé 2×/an',
       'RTO < 4h / RPO < 1h',

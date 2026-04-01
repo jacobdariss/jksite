@@ -27,7 +27,7 @@ const CARDS = [
     tagline: "Hébergement pro souverain",
     bg: '#F2F4F8',
     popular: false,
-    pid: 4,
+    pid: 145,
     features: [
       '2 vCPU dédiés · 4 Go RAM · 40 Go NVMe',
       '500 Go trafic · Domaine .SN inclus',
@@ -43,7 +43,7 @@ const CARDS = [
     bg: '#E8EBF4',
     popular: true,
     popularLabel: 'Recommandé',
-    pid: 5,
+    pid: 146,
     features: [
       '2 vCPU dédiés · 4 Go RAM · 50 Go NVMe',
       'Multi-stacks Node, Python, PHP, Java',
@@ -58,7 +58,7 @@ const CARDS = [
     tagline: 'Cloud privé, votre contrôle',
     bg: '#F2F4F8',
     popular: false,
-    pid: 6,
+    pid: 147,
     features: [
       '4 vCPU dédiés · 8 Go RAM · 100 Go NVMe',
       '1 To trafic · VPC dédié isolé',
