@@ -136,6 +136,9 @@ export default async function HomePage() {
             <p style={{ fontSize:'.95rem',color:'var(--bs)',fontStyle:'italic' }}>« Le vrai risque, ce n&apos;est pas la panne. C&apos;est l&apos;absence de responsabilité. »</p>
           </div>
           <ValueCards />
+      </section>
+
+      <CounterSection />
         </div>
       </section>
 
