@@ -143,6 +143,7 @@ export default function OffresInstitution({ offres = [] }) {
   const [period, setPeriod] = useState('m')
   const { cards: MERGED_CARDS, pricing: MERGED_PRICING } = mergeCards(CARDS, offres, PRICING)
   const [modalSlug, setModalSlug] = useState(null)
+  const [modalOffre, setModalOffre] = useState(null)
 
   return (
     <>
@@ -193,7 +194,7 @@ export default function OffresInstitution({ offres = [] }) {
                       boxShadow: '0 4px 24px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04)',
                     }}>
                       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
-                        <button onClick={() => setModalSlug(card.slug)} style={{
+                        <button onClick={() => { setModalSlug(card.slug); setModalOffre(card) }} style={{
                           display: 'inline-flex', alignItems: 'center', gap: 5,
                           background: `${P}12`, border: `1px solid ${P}30`,
                           color: P, fontSize: '.72rem', fontWeight: 700,
@@ -240,7 +241,7 @@ export default function OffresInstitution({ offres = [] }) {
         `}</style>
       </section>
 
-      {modalSlug && <OffreModal slug={modalSlug} onClose={() => setModalSlug(null)} />}
+      {modalSlug && <OffreModal slug={modalSlug} offre={modalOffre} onClose={() => { setModalSlug(null); setModalOffre(null) }} />}
     </>
   )
 }
