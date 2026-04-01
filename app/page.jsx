@@ -139,8 +139,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <CounterSection />
-
       {/* Why Jokko */}
       <section style={{ padding:'80px 0', background:'var(--ow)' }}>
         <div className="container">
@@ -203,6 +201,8 @@ export default async function HomePage() {
         </div>
         <style>{`.faq-grid details[open] summary span{transform:rotate(45deg)} .faq-grid details summary span{transition:transform .2s} @media(max-width:768px){.faq-grid{grid-template-columns:1fr!important}}`}</style>
       </section>
+
+      <CounterSection />
 
       {/* Marquee logos */}
       <section style={{ padding:'36px 0',borderTop:'1px solid var(--bd)',borderBottom:'1px solid var(--bd)',overflow:'hidden',background:'var(--ow)' }}>
