@@ -117,7 +117,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 64px;
   align-items: center;
-  animation: mq 30s linear infinite;
+  animation: mq 50s linear infinite;
   width: max-content;
 }
 .marquee-track img {
