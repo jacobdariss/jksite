@@ -11,6 +11,7 @@ export default function sitemap() {
     { url: `${BASE}/institution`, lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
     { url: `${BASE}/services`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/partenaires`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${BASE}/partenaires/candidature`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/apropos`,     lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/blog`,        lastModified: now, changeFrequency: 'weekly',  priority: 0.7 },
 
