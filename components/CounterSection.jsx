@@ -78,6 +78,20 @@ export default function CounterSection() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 16 }}>
           {COUNTERS.map(c => <Counter key={c.label} {...c} />)}
         </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: 28 }}>
+          {[
+            { icon: '📊', label: 'Tier III+ Certifié' },
+            { icon: '📋', label: 'Conformité APDP' },
+            { icon: '🔒', label: 'AES-256 Chiffrement' },
+            { icon: '🌍', label: '100% Africain' },
+            { icon: '⚡', label: 'Redondance N+1' },
+          ].map(b => (
+            <span key={b.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '7px 16px', border: '1.5px solid var(--bd)', borderRadius: 999, fontSize: '.78rem', fontWeight: 600, color: 'var(--b)', background: '#fff' }}>
+              <span style={{ fontSize: '13px' }}>{b.icon}</span>
+              {b.label}
+            </span>
+          ))}
+        </div>
       </div>
       <style>{`@media(max-width:768px){section .container [style*="repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important}}`}</style>
     </section>
