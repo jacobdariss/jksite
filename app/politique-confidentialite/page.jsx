@@ -1,5 +1,12 @@
 import LegalPage from '@/components/LegalPage'
 
+export const metadata = {
+  title: 'Politique de Confidentialité | Jokko Pro Africa',
+  description: 'Politique de confidentialité et traitement des données personnelles — Jokko Pro Africa, conformité APDP Sénégal.',
+  alternates: { canonical: 'https://jokko.africa/politique-confidentialite' },
+  robots: { index: false },
+}
+
 
 export default function PolitiqueConfidentialite() {
   return (

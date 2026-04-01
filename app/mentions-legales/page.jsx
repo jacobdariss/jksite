@@ -1,5 +1,12 @@
 import LegalPage from '@/components/LegalPage'
 
+export const metadata = {
+  title: 'Mentions Légales | Jokko Pro Africa',
+  description: 'Mentions légales de Jokko Pro Africa — DARISS CONSULTING SAS, hébergeur cloud souverain au Sénégal.',
+  alternates: { canonical: 'https://jokko.africa/mentions-legales' },
+  robots: { index: false },
+}
+
 
 export default function MentionsLegales() {
   return (

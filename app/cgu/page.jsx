@@ -1,5 +1,11 @@
 import LegalPage from '@/components/LegalPage'
 
+export const metadata = {
+  title: "Conditions Générales d'Utilisation | Jokko Pro Africa",
+  description: "Conditions générales d'utilisation des services Jokko Pro Africa. Hébergement cloud souverain au Sénégal.",
+  alternates: { canonical: 'https://jokko.africa/cgu' },
+  robots: { index: false },
+}
 
 export default function CGU() {
   return (

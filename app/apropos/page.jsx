@@ -1,5 +1,18 @@
 import PageHero from '@/components/PageHero'
 
+export const metadata = {
+  title: 'À propos de Jokko Pro Africa — Le 1er Cloud Souverain du Sénégal',
+  description: "Découvrez Jokko Pro Africa : notre mission, nos valeurs et notre équipe. Premier hébergeur cloud 100% sénégalais, basé à Dakar, engagé pour la souveraineté numérique de l'Afrique.",
+  keywords: 'jokko pro africa, cloud sénégal, hébergeur local dakar, souveraineté numérique afrique, datacenter sénégal',
+  alternates: { canonical: 'https://jokko.africa/apropos' },
+  openGraph: {
+    title: 'À propos — Jokko Pro Africa',
+    description: "Premier hébergeur cloud 100% sénégalais. Souveraineté, proximité, responsabilité.",
+    url: 'https://jokko.africa/apropos',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+}
+
 const VALEURS = [
   { title: 'Souveraineté', desc: 'Vos données restent au Sénégal. Datacenter Tier III+ à Dakar, conformité APDP, jamais hors territoire.', icon: '<path d="M12 3l8 4v5c0 5-4 9-8 10C8 21 4 17 4 12V7z"/>' },
   { title: 'Proximité', desc: 'Un interlocuteur clair. Support humain et local, en français, depuis Dakar. Pas de transferts sans fin.', icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>' },

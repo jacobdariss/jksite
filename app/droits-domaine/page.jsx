@@ -1,5 +1,12 @@
 import LegalPage from '@/components/LegalPage'
 
+export const metadata = {
+  title: 'Droits et Domaine | Jokko Pro Africa',
+  description: "Conditions d'enregistrement et droits relatifs aux noms de domaine — Jokko Pro Africa.",
+  alternates: { canonical: 'https://jokko.africa/droits-domaine' },
+  robots: { index: false },
+}
+
 
 export default function DroitesDomaine() {
   return (

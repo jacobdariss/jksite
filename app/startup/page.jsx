@@ -3,6 +3,19 @@ import OffresStartup from '@/components/OffresStartup'
 import { getOffresBySegment } from '@/lib/strapi'
 import PersonasSection from '@/components/PersonasSection'
 import AddonsSection from '@/components/AddonsSection'
+
+export const metadata = {
+  title: 'Hébergement Startup Sénégal — Racine, Sahara, Téranga | Jokko Pro Africa',
+  description: 'Lancez votre site ou projet en ligne dès 2 000 FCFA/mois. Hébergement cloud souverain pour créateurs, blogueurs et ONG au Sénégal. Activation en moins de 24h.',
+  keywords: 'hébergement startup sénégal, hébergement pas cher dakar, cloud startup afrique, wordpress sénégal, site vitrine dakar',
+  alternates: { canonical: 'https://jokko.africa/startup' },
+  openGraph: {
+    title: 'Hébergement Startup Sénégal — Dès 2 000 FCFA/mois | Jokko',
+    description: 'Racine, Sahara, Téranga — 3 offres cloud souveraines pour lancer votre projet. Support local, activation 24h, évolution sans migration.',
+    url: 'https://jokko.africa/startup',
+    images: [{ url: '/og-startup.png', width: 1200, height: 630 }],
+  },
+}
 import SlaSection from '@/components/SlaSection'
 import TrajectoireSection from '@/components/TrajectoireSection'
 import FaqSection from '@/components/FaqSection'
