@@ -75,10 +75,10 @@ export default function CounterSection() {
           <div className="label" style={{ justifyContent: 'center' }}>En chiffres</div>
           <h2 className="title">Jokko en quelques chiffres</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 16 }}>
+        <div className="counter-grid">
           {COUNTERS.map(c => <Counter key={c.label} {...c} />)}
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: 28 }}>
+        <div className="counter-badges">
           {[
             { icon: '📊', label: 'Tier III+ Certifié' },
             { icon: '📋', label: 'Conformité APDP' },
@@ -93,7 +93,29 @@ export default function CounterSection() {
           ))}
         </div>
       </div>
-      <style>{`@media(max-width:768px){section .container [style*="repeat(5,1fr)"]{grid-template-columns:repeat(2,1fr)!important}}`}</style>
+      <style>{`
+        .counter-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 16px;
+        }
+        .counter-badges {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+          margin-top: 28px;
+        }
+        @media(max-width: 768px) {
+          .counter-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .counter-badges {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      `}</style>
     </section>
   )
 }
