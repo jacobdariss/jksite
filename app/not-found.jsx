@@ -17,13 +17,6 @@ export default function NotFound() {
     }}>
       <div style={{ maxWidth: 560, width: '100%', textAlign: 'center' }}>
 
-        {/* Logo */}
-        <div style={{ marginBottom: 40 }}>
-          <Link href="/">
-            <img src="/_assets/logos/jokko-logo-dark.png" alt="Jokko Pro Africa" style={{ height: 36, objectFit: 'contain' }} />
-          </Link>
-        </div>
-
         {/* 404 illustré */}
         <div style={{ position: 'relative', marginBottom: 32 }}>
           <div style={{
@@ -40,7 +33,6 @@ export default function NotFound() {
           }}>
             404
           </div>
-          {/* Petite icône server */}
           <div style={{
             position: 'absolute', bottom: -8, left: '50%', transform: 'translateX(-50%)',
             background: '#fff', border: '2px solid var(--obg2)', borderRadius: 12,
@@ -72,12 +64,8 @@ export default function NotFound() {
 
         {/* CTA */}
         <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
-          <Link href="/" className="btn btn-o btn-lg">
-            ← Retour à l&apos;accueil
-          </Link>
-          <Link href="/startup" className="btn btn-ol btn-lg">
-            Voir nos offres
-          </Link>
+          <Link href="/" className="btn btn-o btn-lg">← Retour à l&apos;accueil</Link>
+          <Link href="/startup" className="btn btn-ol btn-lg">Voir nos offres</Link>
           <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer" className="btn btn-lg"
             style={{ background: '#fff', border: '1.5px solid var(--bd)', color: 'var(--b)' }}>
             WhatsApp
@@ -87,11 +75,11 @@ export default function NotFound() {
         {/* Liens rapides */}
         <div style={{
           background: '#fff', border: '1px solid var(--bd)', borderRadius: 16,
-          padding: '20px 24px', display: 'flex', flexWrap: 'wrap', gap: '8px 24px',
-          justifyContent: 'center',
+          padding: '20px 24px', display: 'flex', flexWrap: 'nowrap', gap: '8px 20px',
+          justifyContent: 'center', alignItems: 'center',
         }}>
-          <span style={{ fontSize: '.72rem', fontWeight: 700, color: 'var(--bm)', textTransform: 'uppercase', letterSpacing: '1px', width: '100%', textAlign: 'center', marginBottom: 4 }}>
-            Pages principales
+          <span style={{ fontSize: '.72rem', fontWeight: 700, color: 'var(--bm)', textTransform: 'uppercase', letterSpacing: '1px', flexShrink: 0 }}>
+            Pages :
           </span>
           {[
             { label: 'Startup', href: '/startup' },
@@ -103,7 +91,7 @@ export default function NotFound() {
             { label: 'À propos', href: '/apropos' },
           ].map(l => (
             <Link key={l.href} href={l.href}
-              style={{ fontSize: '.84rem', fontWeight: 600, color: 'var(--o)', textDecoration: 'none' }}>
+              style={{ fontSize: '.84rem', fontWeight: 600, color: 'var(--o)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
               {l.label}
             </Link>
           ))}
