@@ -74,8 +74,8 @@ export default function NotFound() {
 
         {/* Liens rapides */}
         <div style={{
-          background: '#fff', border: '1px solid var(--bd)', borderRadius: 16,
-          padding: '20px 24px', display: 'flex', flexWrap: 'nowrap', gap: '8px 20px',
+          background: 'transparent', border: '1px solid rgba(232,93,4,.2)', borderRadius: 16,
+          padding: '16px 24px', display: 'flex', flexWrap: 'wrap', gap: '8px 20px',
           justifyContent: 'center', alignItems: 'center',
         }}>
           <span style={{ fontSize: '.72rem', fontWeight: 700, color: 'var(--bm)', textTransform: 'uppercase', letterSpacing: '1px', flexShrink: 0 }}>
