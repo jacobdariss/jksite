@@ -230,7 +230,7 @@ export default function PartenairesPage() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {NIVEAUX.map((n, i) => (
-              <div key={n.label} className="reveal hover-lift" style={{ display: 'grid', gridTemplateColumns: '56px 1fr auto', gap: 20, alignItems: 'center', background: i === 0 ? 'var(--ow)' : '#FFF7EE', border: `1.5px solid ${i === 0 ? 'var(--bd)' : 'var(--obg2)'}`, borderRadius: 16, padding: '20px 24px' }}>
+              <div key={n.label} className="reveal hover-lift" style={{ display: 'grid', gridTemplateColumns: '56px 1fr auto', gap: 20, alignItems: 'center', background: '#F5F5F3', border: '1.5px solid var(--bd)', borderRadius: 16, padding: '20px 24px' }}>
                 <div style={{ width: 48, height: 48, borderRadius: '50%', background: n.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 800, color: '#fff', flexShrink: 0 }}>{n.n}</div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
