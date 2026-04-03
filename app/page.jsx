@@ -7,7 +7,8 @@ import ValueCards from '@/components/ValueCards'
 import CounterSection from '@/components/CounterSection'
 import FaqSection from '@/components/FaqSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
-import { getTestimonials, getPartners, getSeoByPage } from '@/lib/strapi'
+import { getTestimonials, getPartners, getSeoByPage, getActiveAnnouncement } from '@/lib/strapi'
+import AnnouncementModal from '@/components/AnnouncementModal'
 
 export async function generateMetadata() {
   const seo = await getSeoByPage('home')
@@ -69,10 +70,11 @@ const LOGOS = Array.from({length: 30}, (_, i) => `${i + 1}.png`)
 export const revalidate = 3600
 
 export default async function HomePage() {
-  const [testimonials, partners] = await Promise.all([getTestimonials(), getPartners()])
+  const [testimonials, partners, announcement] = await Promise.all([getTestimonials(), getPartners(), getActiveAnnouncement()])
   return (
     <>
       <HeroSlider />
+      <AnnouncementModal announcement={announcement} />
       <PaymentBand />
 
       {/* Segments */}
