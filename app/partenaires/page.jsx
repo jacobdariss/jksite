@@ -153,13 +153,13 @@ export default function PartenairesPage() {
           <div className="reveal p-deux-parcours">
             {[
               {
-                title: 'Affilié', badge: 'Niveau 1', bg: 'var(--ow)', border: 'var(--bd)',
+                title: 'Affilié', badge: 'Niveau 1', bg: '#F5F5F3', border: 'var(--bd)',
                 desc: 'Vous générez des opportunités via votre réseau ou votre audience. Jokko facture directement le client.',
                 items: ['Lien affilié ou code personnel', 'Pas de structure légale requise', 'Commission après encaissement', 'Zéro gestion contractuelle'],
                 note: 'Idéal pour démarrer sans engagement',
               },
               {
-                title: 'Partenaire', badge: 'Niveaux 2 → 5', bg: '#FFF7EE', border: 'var(--obg2)',
+                title: 'Partenaire', badge: 'Niveaux 2 → 5', bg: '#F5F5F3', border: 'var(--bd)',
                 desc: 'Vous prospectez, vendez, facturez et gérez la relation client. Vous portez la promesse Jokko.',
                 items: ['Structure légale obligatoire', 'Facturation client en direct', 'Marge + bonus volume + bonus stratégique', 'Suivi IPP trimestriel'],
                 note: 'Pour les professionnels qui veulent scaler',
