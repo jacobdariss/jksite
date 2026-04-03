@@ -21,7 +21,7 @@ const SEGMENTS = [
     desc: 'Souveraineté, conformité, continuité',
     sub: 'SLA à pénalités, PRA documenté, support 24/7 dédié.',
     pills: ['Héritage', 'Forteresse', 'Kilimandjaro'], pillClass: 'pill-p',
-    img: '/_assets/logos/datacenter.jpg',
+    img: '/_assets/logos/datacenter-institution.jpg',
   },
 ]
 
