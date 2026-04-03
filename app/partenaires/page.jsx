@@ -311,7 +311,7 @@ export default function PartenairesPage() {
           </div>
           <div className="p-steps-grid">
             {ETAPES.map((e, i) => (
-              <div key={e.n} className={`hover-lift reveal reveal-delay-${i % 4}`} style={{ background: 'var(--ow)', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 20px', textAlign: 'center', position: 'relative' }}>
+              <div key={e.n} className={`hover-lift reveal reveal-delay-${i % 4}`} style={{ background: '#F5F5F3', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 20px', textAlign: 'center', position: 'relative' }}>
                 <div style={{ fontFamily: 'var(--fd)', fontSize: '1.8rem', fontWeight: 700, color: 'var(--o)', marginBottom: 8 }}>{e.n}</div>
                 <h3 style={{ fontWeight: 700, fontSize: '.95rem', marginBottom: 8 }}>{e.title}</h3>
                 <p style={{ fontSize: '.82rem', color: 'var(--bs)', lineHeight: 1.6 }}>{e.desc}</p>
