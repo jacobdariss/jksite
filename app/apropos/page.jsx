@@ -85,7 +85,7 @@ export default function APropos() {
       </section>
 
       {/* Stats */}
-      <section style={{ padding: '60px 0', background: 'var(--ow)', borderTop: '1px solid var(--bd)' }}>
+      <section style={{ padding: '60px 0', background: '#F5F5F3', borderTop: '1px solid var(--bd)' }}>
         <div className="container">
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 16 }}>
             {STATS.map((s, i) => (
@@ -132,7 +132,7 @@ export default function APropos() {
       </section>
 
       {/* Couverture africaine */}
-      <section style={{ padding: '80px 0', background: 'var(--ow)' }}>
+      <section style={{ padding: '80px 0', background: '#F5F5F3' }}>
         <div className="container">
           <div className="reveal" style={{ textAlign: 'center', marginBottom: 40 }}>
             <div className="label" style={{ justifyContent: 'center' }}>Couverture africaine</div>
@@ -161,7 +161,7 @@ export default function APropos() {
           </div>
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {TEAM.map((m, i) => (
-              <div key={i} className="hover-lift" style={{ background: 'var(--ow)', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 24px', display: 'flex', gap: 16, alignItems: 'center' }}>
+              <div key={i} className="hover-lift" style={{ background: '#F5F5F3', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 24px', display: 'flex', gap: 16, alignItems: 'center' }}>
                 <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'linear-gradient(135deg,var(--o),var(--ol))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '.85rem', color: '#fff', flexShrink: 0 }}>{m.initials}</div>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: '.9rem', marginBottom: 4 }}>{m.name}</div>
@@ -175,7 +175,7 @@ export default function APropos() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
+      <section style={{ padding: '64px 0', background: '#fff' }}>
         <div className="container">
           <div className="reveal" style={{ background: 'linear-gradient(135deg,var(--o),var(--ol))', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
             <h2 style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, marginBottom: 10 }}>Qui assume votre continuité numérique ?</h2>
