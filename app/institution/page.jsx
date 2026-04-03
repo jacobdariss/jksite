@@ -76,19 +76,7 @@ export default async function InstitutionPage() {
       <AddonsSection addons={ADDONS} color="var(--p)" title="Sécurité & conformité avancées" cols={3} />
       <SlaSection stats={SLA_STATS} color="var(--p)" bg="linear-gradient(160deg,#F3F0FA,#EDE8F5,#E2D9F0)" title="Nos engagements Institution" badge="SLA 99.95% · Pénalités contractuelles" />
       <FaqSection faqs={FAQS} color="var(--p)" />
-      <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
-        <div className="container">
-          <div className="reveal" style={{ background: 'linear-gradient(135deg,#6B4C9A,#8B6FBF)', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
-            <h2 style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, marginBottom: 10 }}>La même exigence que vous.</h2>
-            <p style={{ fontSize: '.95rem', color: 'rgba(255,255,255,.85)', marginBottom: 24 }}>SLA à pénalités. Support 24/7 dédié. Données 100% Sénégal. <strong>Jokko assume.</strong></p>
-            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://manage.jokko.africa/submitticket.php" target="_blank" rel="noreferrer" className="btn btn-w btn-lg">Demander un devis →</a>
-              <a href="tel:+221338425735" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.3)' }}>+221 33 842 57 35</a>
-              <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.25)' }}>WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>
   )
 }

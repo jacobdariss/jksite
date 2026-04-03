@@ -86,19 +86,7 @@ export default async function StartupPage() {
       <SlaSection stats={SLA_STATS} color="var(--o)" bg="linear-gradient(160deg,#FFF7EE,#FFE8D0,#FFD6B0)" title="Nos engagements Startup" badge="SLA 99.5% · Best effort" />
       <TrajectoireSection steps={TRAJECTOIRE} nextHref="/entreprise" nextLabel="Entreprise" color="var(--o)" />
       <FaqSection faqs={FAQS} color="var(--o)" />
-      <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
-        <div className="container">
-          <div className="reveal" style={{ background: 'linear-gradient(135deg,var(--o),var(--ol))', borderRadius: 'var(--rx)', padding: '48px 40px', textAlign: 'center', color: '#fff' }}>
-            <h2 style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, marginBottom: 10 }}>Prêt à lancer votre projet ?</h2>
-            <p style={{ fontSize: '.95rem', color: 'rgba(255,255,255,.85)', marginBottom: 24 }}>Activez votre hébergement en moins de 24h. <strong>Jokko assume.</strong></p>
-            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://manage.jokko.africa/" target="_blank" rel="noreferrer" className="btn btn-w btn-lg">Espace Client →</a>
-              <a href="tel:+221338425735" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.3)' }}>+221 33 842 57 35</a>
-              <a href="https://wa.me/221777003737" target="_blank" rel="noreferrer" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.15)', color: '#fff', border: '1.5px solid rgba(255,255,255,.25)' }}>WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>
   )
 }
