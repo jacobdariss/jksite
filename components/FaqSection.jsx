@@ -33,7 +33,7 @@ export default function FaqSection({ faqs, color = 'var(--o)', ctaTitle, ctaDesc
       </section>
 
       {/* CTA Orange */}
-      <section style={{ padding: '64px 0', background: '#F5F5F3' }}>
+      <section style={{ padding: '64px 0', background: '#fff' }}>
         <div className="container">
           <div className="reveal" style={{ background: 'linear-gradient(135deg,var(--o),var(--ol))', borderRadius: 'var(--rx)', padding: '56px 48px', textAlign: 'center', color: '#fff', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: -40, right: -40, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,.08)' }} />
