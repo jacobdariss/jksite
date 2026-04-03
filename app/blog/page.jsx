@@ -72,7 +72,7 @@ export default async function BlogPage() {
       </section>
 
       {/* CTA newsletter */}
-      <section style={{ padding: '64px 0', background: 'var(--ow)' }}>
+      <section style={{ padding: '64px 0', background: '#F5F5F3' }}>
         <div className="container" style={{ maxWidth: 640, textAlign: 'center' }}>
           <div className="reveal">
             <div className="label" style={{ justifyContent: 'center' }}>Restez informé</div>
