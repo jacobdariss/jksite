@@ -75,8 +75,8 @@ export default function NotFound() {
         {/* Liens rapides */}
         <div style={{
           background: '#fff', border: '1px solid var(--bd)', borderRadius: 16,
-          padding: '16px 24px', display: 'flex', flexWrap: 'wrap', gap: '8px 20px',
-          justifyContent: 'center', alignItems: 'center',
+          padding: '16px 24px', display: 'flex', flexWrap: 'nowrap', gap: '8px 20px',
+          justifyContent: 'center', alignItems: 'center', overflowX: 'auto',
         }}>
           {[
             { label: 'Startup', href: '/startup' },
