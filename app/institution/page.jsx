@@ -62,7 +62,7 @@ export default async function InstitutionPage() {
         title="Vos obligations sont"
         titleEm="non négociables."
         desc="Souveraineté totale des données, SLA avec pénalités, PRA documenté et testé, support 24/7 dédié. Notre engagement aussi."
-        img="/_assets/logos/datacenter.jpg"
+        img="/_assets/logos/equipe-reunion.png"
         badge="Institution B2G"
         color="var(--p)"
         bg="linear-gradient(135deg,#F3EFF8,#EDE6F5)"
