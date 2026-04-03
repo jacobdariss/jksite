@@ -52,7 +52,7 @@ export default function AddonsSection({ addons, color = 'var(--o)', title = 'Ren
             {addons.map((a, i) => (
               <div key={i} onClick={() => setActive(a)}
                 className="hover-lift"
-                style={{ border: '1px solid var(--bdl)', borderRadius: 16, padding: '20px 24px', display: 'flex', cursor: 'pointer', gap: 14, alignItems: 'flex-start', background: 'var(--ow)', boxShadow: '0 4px 24px rgba(0,0,0,.06)' }}>
+                style={{ border: '1px solid var(--bdl)', borderRadius: 16, padding: '20px 24px', display: 'flex', cursor: 'pointer', gap: 14, alignItems: 'flex-start', background: '#fff', boxShadow: '0 2px 12px rgba(0,0,0,.06)' }}>
                 <div style={{ width: 44, height: 44, minWidth: 44, borderRadius: 12, background: `${color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', color }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: a.iconPath }} />
                 </div>
