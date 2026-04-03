@@ -2,8 +2,8 @@
 
 const VALUES = [
   { title: 'Proximité', desc: 'Un interlocuteur clair. Support humain et local, en français, depuis Dakar.', img: '/_assets/logos/equipe-jokko.png' },
-  { title: 'Souveraineté', desc: 'Vos données restent au Sénégal. Datacenter Tier III+, conformité APDP.', img: '/_assets/logos/datacenter.jpg' },
-  { title: 'Fiabilité', desc: '99.95% de disponibilité. Monitoring IA 24/7, SLA formalisés.', img: '/_assets/logos/datacenter.jpg' },
+  { title: 'Souveraineté', desc: 'Vos données restent au Sénégal. Datacenter Tier III+, conformité APDP.', img: '/_assets/logos/datacenter-institution.jpg' },
+  { title: 'Fiabilité', desc: '99.95% de disponibilité. Monitoring IA 24/7, SLA formalisés.', img: '/_assets/logos/equipe-bureau.png' },
   { title: 'Évolution', desc: 'Startup → Entreprise → Institution, sans migration brutale.', img: '/_assets/logos/evolution-laptop.png' },
 ]
 
