@@ -71,7 +71,7 @@ export default function APropos() {
           </div>
           <div className="reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
             {VALEURS.map((v, i) => (
-              <div key={i} className="hover-lift" style={{ background: 'var(--ow)', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 20px', textAlign: 'center' }}>
+              <div key={i} className="hover-lift" style={{ background: '#F5F5F3', border: '1px solid var(--bd)', borderRadius: 'var(--rx)', padding: '28px 20px', textAlign: 'center' }}>
                 <div style={{ width: 52, height: 52, borderRadius: 14, background: 'var(--obg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px', color: 'var(--o)' }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: v.icon }} />
                 </div>
