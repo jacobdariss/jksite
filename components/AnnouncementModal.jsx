@@ -76,6 +76,14 @@ export default function AnnouncementModal({ announcement }) {
           ✕
         </button>
 
+        {/* Image optionnelle */}
+        {announcement.image_url && (
+          <div style={{ marginBottom: 20, borderRadius: 12, overflow: 'hidden', maxHeight: 180 }}>
+            <img src={announcement.image_url} alt={announcement.title}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+        )}
+
         {/* Contenu */}
         <div style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{
