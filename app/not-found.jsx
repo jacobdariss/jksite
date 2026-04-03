@@ -78,9 +78,6 @@ export default function NotFound() {
           padding: '16px 24px', display: 'flex', flexWrap: 'wrap', gap: '8px 20px',
           justifyContent: 'center', alignItems: 'center',
         }}>
-          <span style={{ fontSize: '.72rem', fontWeight: 700, color: 'var(--bm)', textTransform: 'uppercase', letterSpacing: '1px', flexShrink: 0 }}>
-            Pages :
-          </span>
           {[
             { label: 'Startup', href: '/startup' },
             { label: 'Entreprise', href: '/entreprise' },
