@@ -6,17 +6,17 @@ const P = '#6B4C9A'
 
 const PRICING = {
   heritage: {
-    m: { val: '25 000', label: 'FCFA / mois',     sub: 'Engagement annuel · 300 000 FCFA/an' },
-    t: { val: '75 000', label: 'FCFA / trimestre', sub: 'soit 25 000 FCFA/mois' },
-    a: { val: '300 000', label: 'FCFA / an',       sub: 'soit 25 000 FCFA/mois · 2 mois offerts' },
+    m: { val: '35 000', label: 'FCFA / mois',     sub: 'Résiliable mensuellement' },
+    t: { val: '105 000', label: 'FCFA / trimestre', sub: 'soit 33 250 FCFA/mois — économie 5%', badge: '-5%' },
+    a: { val: '378 000', label: 'FCFA / an',       sub: 'soit 31 500 FCFA/mois — économie 10%', badge: '-10%' },
   },
   forteresse: {
-    m: { val: '45 000', label: 'FCFA / mois',     sub: 'Engagement annuel · 540 000 FCFA/an' },
-    t: { val: '135 000', label: 'FCFA / trimestre', sub: 'soit 45 000 FCFA/mois' },
-    a: { val: '540 000', label: 'FCFA / an',       sub: 'soit 45 000 FCFA/mois · 2 mois offerts' },
+    m: { val: '65 000', label: 'FCFA / mois',     sub: 'Résiliable mensuellement' },
+    t: { val: '195 000', label: 'FCFA / trimestre', sub: 'soit 61 750 FCFA/mois — économie 5%', badge: '-5%' },
+    a: { val: '702 000', label: 'FCFA / an',       sub: 'soit 58 500 FCFA/mois — économie 10%', badge: '-10%' },
   },
   kilimandjaro: {
-    m: { val: '85 000', label: 'FCFA / mois',     sub: 'Config. sur mesure — devis personnalisé' },
+    m: { val: 'Sur devis', label: '',              sub: 'À partir de 120 000 FCFA/mois · VDC ou Bare Metal' },
     t: { val: 'Sur devis', label: '',              sub: 'Configuration sur mesure' },
     a: { val: 'Sur devis', label: '',              sub: 'Configuration sur mesure' },
   },

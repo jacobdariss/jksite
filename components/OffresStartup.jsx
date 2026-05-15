@@ -4,19 +4,19 @@ import { OffreModal } from './OffreModal'
 
 const PRICING = {
   racine: {
-    m:  { val: '2 000', label: 'FCFA / mois',      sub: 'Engagement mensuel · résiliable' },
-    t:  { val: '6 000', label: 'FCFA / trimestre',  sub: 'soit 2 000 FCFA/mois' },
-    a:  { val: '24 000', label: 'FCFA / an',        sub: 'soit 2 000 FCFA/mois · 2 mois offerts' },
+    m:  { val: '1 850', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t:  { val: '5 550', label: 'FCFA / trimestre',  sub: 'soit 1 750 FCFA/mois — économie 5%', badge: '-5%' },
+    a:  { val: '19 800', label: 'FCFA / an',        sub: 'soit 1 650 FCFA/mois — économie 10%', badge: '-10%' },
   },
   simba: {
-    m:  { val: '4 000', label: 'FCFA / mois',      sub: 'Sans engagement minimum' },
-    t:  { val: '12 000', label: 'FCFA / trimestre', sub: 'soit 4 000 FCFA/mois' },
-    a:  { val: '48 000', label: 'FCFA / an',        sub: 'soit 4 000 FCFA/mois · 2 mois offerts' },
+    m:  { val: '3 950', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t:  { val: '11 850', label: 'FCFA / trimestre', sub: 'soit 3 750 FCFA/mois — économie 5%', badge: '-5%' },
+    a:  { val: '42 600', label: 'FCFA / an',        sub: 'soit 3 550 FCFA/mois — économie 10%', badge: '-10%' },
   },
   teranga: {
-    m:  { val: '5 000', label: 'FCFA / mois',      sub: 'Engagement annuel' },
-    t:  { val: '15 000', label: 'FCFA / trimestre', sub: 'soit 5 000 FCFA/mois' },
-    a:  { val: '60 000', label: 'FCFA / an',        sub: 'soit 5 000 FCFA/mois · 2 mois offerts' },
+    m:  { val: '4 500', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t:  { val: '13 500', label: 'FCFA / trimestre', sub: 'soit 4 300 FCFA/mois — économie 5%', badge: '-5%' },
+    a:  { val: '48 600', label: 'FCFA / an',        sub: 'soit 4 050 FCFA/mois — économie 10%', badge: '-10%' },
   },
 }
 

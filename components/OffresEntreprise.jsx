@@ -4,19 +4,19 @@ import { OffreModal } from './OffreModal'
 
 const PRICING = {
   baobab: {
-    m: { val: '12 500', label: 'FCFA / mois',      sub: 'Trimestriel ou annuel disponible' },
-    t: { val: '37 500', label: 'FCFA / trimestre',  sub: 'soit 12 500 FCFA/mois' },
-    a: { val: '150 000', label: 'FCFA / an',        sub: 'soit 12 500 FCFA/mois · 2 mois offerts' },
+    m: { val: '12 500', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t: { val: '37 500', label: 'FCFA / trimestre',  sub: 'soit 11 900 FCFA/mois — économie 5%', badge: '-5%' },
+    a: { val: '135 000', label: 'FCFA / an',        sub: 'soit 11 250 FCFA/mois — économie 10%', badge: '-10%' },
   },
   fondation: {
-    m: { val: '25 000', label: 'FCFA / mois',      sub: 'Sans engagement minimum' },
-    t: { val: '75 000', label: 'FCFA / trimestre',  sub: 'soit 25 000 FCFA/mois' },
-    a: { val: '240 000', label: 'FCFA / an',        sub: 'soit 20 000 FCFA/mois — économie 60 000 FCFA', badge: '-20%' },
+    m: { val: '25 000', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t: { val: '75 000', label: 'FCFA / trimestre',  sub: 'soit 23 750 FCFA/mois — économie 5%', badge: '-5%' },
+    a: { val: '270 000', label: 'FCFA / an',        sub: 'soit 22 500 FCFA/mois — économie 10%', badge: '-10%' },
   },
   savane: {
-    m: { val: '35 000', label: 'FCFA / mois',      sub: 'Sans engagement minimum' },
-    t: { val: '105 000', label: 'FCFA / trimestre', sub: 'soit 35 000 FCFA/mois' },
-    a: { val: '336 000', label: 'FCFA / an',        sub: 'soit 28 000 FCFA/mois — économie 84 000 FCFA', badge: '-20%' },
+    m: { val: '45 000', label: 'FCFA / mois',      sub: 'Résiliable mensuellement' },
+    t: { val: '135 000', label: 'FCFA / trimestre', sub: 'soit 42 750 FCFA/mois — économie 5%', badge: '-5%' },
+    a: { val: '486 000', label: 'FCFA / an',        sub: 'soit 40 500 FCFA/mois — économie 10%', badge: '-10%' },
   },
 }
 
