@@ -47,16 +47,16 @@ const SLA_STATS = [
 
 const TRAJECTOIRE = [
   { name: 'Racine', sub: '2 000 F', current: true, iconPath: '<circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 14h14"/>' },
-  { name: 'Sahara', sub: '4 000 F', current: true, iconPath: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>' },
+  { name: 'Simba', sub: '4 000 F', current: true, iconPath: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>' },
   { name: 'Téranga', sub: '5 000 F', current: true, iconPath: '<path d="M17 20H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2z"/><path d="M12 7V4M9 4h6"/>' },
   { name: 'Baobab', sub: 'Entreprise', current: false, iconPath: '<rect x="2" y="3" width="20" height="5" rx="2"/><rect x="2" y="11" width="20" height="5" rx="2"/><circle cx="6" cy="5.5" r=".7" fill="currentColor"/><circle cx="6" cy="13.5" r=".7" fill="currentColor"/>' },
   { name: 'Savane', sub: 'Entreprise', current: false, iconPath: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>' },
 ]
 
 const FAQS = [
-  { q: "Quelle offre pour mon premier site ?", a: "<strong>Racine</strong> pour un site vitrine simple. <strong>Sahara</strong> si vous utilisez WordPress ou WooCommerce." },
-  { q: "Puis-je changer d'offre ensuite ?", a: "Oui. Racine → Sahara → Baobab → Savane. Migration fluide, sans interruption." },
-  { q: "WordPress est-il préinstallé ?", a: "Oui avec <strong>Sahara</strong> : WordPress optimisé, cache LiteSpeed, CDN Afrique." },
+  { q: "Quelle offre pour mon premier site ?", a: "<strong>Racine</strong> pour un site vitrine simple. <strong>Simba</strong> si vous utilisez WordPress ou WooCommerce." },
+  { q: "Puis-je changer d'offre ensuite ?", a: "Oui. Racine → Simba → Baobab → Savane. Migration fluide, sans interruption." },
+  { q: "WordPress est-il préinstallé ?", a: "Oui avec <strong>Simba</strong> : WordPress optimisé, cache LiteSpeed, CDN Afrique." },
   { q: "Je suis une ONG, quelle offre ?", a: "<strong>Téranga</strong> : tarif solidaire, multi-sites (3 projets), support dédié. 5 000 FCFA/mois." },
   { q: "Quels moyens de paiement ?", a: "Wave, Orange Money et +60 autres moyens dans 10 pays africains. Provisioning automatique." },
   { q: "Combien de temps pour activer ?", a: "Moins de 24h après paiement. Accès envoyés par email." },

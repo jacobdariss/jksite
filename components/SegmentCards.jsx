@@ -6,7 +6,7 @@ const SEGMENTS = [
     href: '/startup', num: '01', label: 'Startup', color: '#E85D04',
     desc: 'Lancer vite, tester, évoluer',
     sub: 'Fiabilité dès le jour 1, prix adaptés, évolution sans migration.',
-    pills: ['Racine', 'Sahara', 'Téranga'], pillClass: 'pill-o',
+    pills: ['Racine', 'Simba', 'Téranga'], pillClass: 'pill-o',
     img: '/_assets/logos/equipe-reunion.png',
   },
   {

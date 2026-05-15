@@ -8,7 +8,7 @@ const PRICING = {
     t:  { val: '6 000', label: 'FCFA / trimestre',  sub: 'soit 2 000 FCFA/mois' },
     a:  { val: '24 000', label: 'FCFA / an',        sub: 'soit 2 000 FCFA/mois · 2 mois offerts' },
   },
-  sahara: {
+  simba: {
     m:  { val: '4 000', label: 'FCFA / mois',      sub: 'Sans engagement minimum' },
     t:  { val: '12 000', label: 'FCFA / trimestre', sub: 'soit 4 000 FCFA/mois' },
     a:  { val: '48 000', label: 'FCFA / an',        sub: 'soit 4 000 FCFA/mois · 2 mois offerts' },
@@ -33,12 +33,12 @@ const CARDS = [
       '100 Go trafic · SSL inclus',
       'Activation en moins de 24h',
       'Support email J+1 · SLA 99,5%',
-      'Évolution vers Sahara sans migration',
+      'Évolution vers Simba sans migration',
     ],
   },
   {
-    slug: 'sahara',
-    name: 'Sahara',
+    slug: 'simba',
+    name: 'Simba',
     tagline: 'WordPress optimisé, trafic garanti',
     bg: '#FFF0DC',
     popular: true,

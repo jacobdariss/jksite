@@ -7,15 +7,15 @@ const OFFRES = {
     name: 'Racine', sub: 'Votre premier site, zéro stress', seg: 'Startup', seg_color: '#E85D04',
     pitch_title: 'Votre présence en ligne, dès le premier jour.',
     pitch: "Vous lancez votre projet. Pas besoin de comprendre la technique — vous avez juste à publier. Jokko s'assure que ça tourne, dès le jour 1, avec un support humain basé à Dakar.",
-    pitch_details: ["Activation en moins de 24h", "Accompagnement au démarrage inclus", "SSL, hébergement fiable, support local", "Évolution vers Sahara puis Baobab sans jamais changer de prestataire"],
+    pitch_details: ["Activation en moins de 24h", "Accompagnement au démarrage inclus", "SSL, hébergement fiable, support local", "Évolution vers Simba puis Baobab sans jamais changer de prestataire"],
     price: '2 000 FCFA', psub: '/mois · Engagement annuel — 24 000 FCFA/an',
     resources: ['1 vCPU', '1 Go RAM', '10 Go SSD', '100 Go trafic'],
     sla: 'Disponibilité 99,5% · Support email J+1 · Incidents traités sous 24h',
     addons_short: 'Papyrus Email · Oasis Backup · Onboarding Accompagné',
     pid: 142,
   },
-  sahara: {
-    name: 'Sahara', sub: 'WordPress optimisé, trafic garanti', seg: 'Startup', seg_color: '#E85D04',
+  simba: {
+    name: 'Simba', sub: 'WordPress optimisé, trafic garanti', seg: 'Startup', seg_color: '#E85D04',
     pitch_title: 'WordPress prêt. Rapide. Sécurisé. Vous publiez, on gère le moteur.',
     pitch: "Vous créez du contenu ou vendez en ligne. Votre WordPress est préinstallé, optimisé et boosté avec un CDN Afrique — pour que vos visiteurs restent et convertissent.",
     pitch_details: ["WordPress préinstallé et optimisé", "Cache LiteSpeed + CDN Afrique pour une vitesse maximale", "SEO technique intégré dès le démarrage", "Évolution vers Baobab sans migration — aucune interruption"],
