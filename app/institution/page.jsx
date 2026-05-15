@@ -74,6 +74,41 @@ export default async function InstitutionPage() {
       <PersonasSection personas={PERSONAS} color="var(--p)" title="Les offres Institution sont faites pour vous si…" />
       <OffresInstitution offres={offres} />
       <AddonsSection addons={ADDONS} color="var(--p)" title="Sécurité & conformité avancées" cols={3} />
+
+      {/* Services Managés */}
+      <section style={{ padding: '60px 0', background: '#F5F5F3' }}>
+        <div className="container">
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 36 }}>
+            <div className="label" style={{ justifyContent: 'center', color: 'var(--p)' }}>Services Managés</div>
+            <h2 className="title">Votre IT géré par des experts souverains</h2>
+            <p style={{ fontSize: '.95rem', color: 'var(--bs)', maxWidth: 540, margin: '0 auto', lineHeight: 1.7 }}>Kora virtualise vos applications Windows. Jokko Manage administre votre infrastructure. 100% Sénégal, SLA contractuel.</p>
+          </div>
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, maxWidth: 860, margin: '0 auto' }}>
+            {[
+              { name: 'Kora', sub: 'Virtualisation d\'applications Windows', desc: 'Serveur Windows dédié datacenter Jokko. Accès HTML5 navigateur — aucun logiciel à installer. Compatible PC, Mac, tablette. Sauvegarde quotidienne incluse.', prix: 'Entreprise (16–25 users) : 13 000 FCFA/user/mois · Institution (26+) : Sur devis', icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>' },
+              { name: 'Jokko Manage', sub: 'Infogérance souveraine clé en main', desc: 'Administration OS, supervision proactive, gestion BDD, sauvegardes opérationnelles vérifiées, conseil et planification IT. SLA 2h sur formule Souverain.', prix: 'Pro (3 serveurs) : 120 000 FCFA/mois · Souverain (5 serveurs) : À partir de 200 000 FCFA/mois', icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+            ].map((sv, i) => (
+              <div key={i} className="hover-lift" style={{ background: '#fff', border: '1px solid var(--bd)', borderRadius: 16, padding: '28px 24px', boxShadow: '0 2px 12px rgba(0,0,0,.06)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
+                  <div style={{ width: 48, height: 48, minWidth: 48, borderRadius: 12, background: '#6B4C9A18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--p)' }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: sv.icon }} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontFamily: 'var(--fd)', fontSize: '1.05rem', fontWeight: 700, marginBottom: 2 }}>{sv.name}</h3>
+                    <div style={{ fontSize: '.78rem', color: 'var(--bm)' }}>{sv.sub}</div>
+                  </div>
+                </div>
+                <p style={{ fontSize: '.88rem', color: 'var(--bs)', lineHeight: 1.7, marginBottom: 14 }}>{sv.desc}</p>
+                <div style={{ fontSize: '.78rem', fontWeight: 700, color: 'var(--p)', borderTop: '1px solid var(--bd)', paddingTop: 12 }}>{sv.prix}</div>
+                <div style={{ marginTop: 14 }}>
+                  <a href="https://manage.jokko.africa/submitticket.php" target="_blank" rel="noreferrer" className="btn" style={{ fontSize: '.82rem', background: 'var(--p)', color: '#fff' }}>Demander un devis →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: 'center', fontSize: '.78rem', color: 'var(--bm)', marginTop: 20 }}>B2B et B2G uniquement · SLA contractuel · Hors astreinte 24/7</p>
+        </div>
+      </section>
       <SlaSection stats={SLA_STATS} color="var(--p)" bg="linear-gradient(160deg,#F3F0FA,#EDE8F5,#E2D9F0)" title="Nos engagements Institution" badge="SLA 99.95% · Pénalités contractuelles" />
       <FaqSection faqs={FAQS} color="var(--p)" />
       

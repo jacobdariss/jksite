@@ -37,6 +37,9 @@ const ADDONS = [
   { name: "Référent Dédié", desc: "Interlocuteur technique nommé, appels mensuels.", prix: "25 000 FCFA/mois", category: "Support", pitch: "Fini les transferts sans fin. Vous avez un nom, un numéro, quelqu'un qui connaît votre contexte par coeur.", features: ["Interlocuteur technique nommé", "Connaissance approfondie de votre environnement", "Appels planifiés mensuels proactifs", "Point d'escalade direct en cas d'urgence"], iconPath: '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>' },
   { name: "Astreinte 24/7", desc: "Couverture nuits, weekends, jours fériés.", prix: "35 000 FCFA/mois", category: "Support", pitch: "Votre activité ne s'arrête pas à 18h. Votre support non plus. Intervention garantie en moins d'une heure, même à 3h du matin.", features: ["Couverture 24h/24, 7j/7, 365j/an", "Intervention garantie < 1h (nuit/weekend)", "Astreinte téléphonique dédiée", "Rapport d'astreinte mensuel"], iconPath: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' },
   { name: "Revue Stratégique", desc: "Bilan trimestriel, recommandations, prévisions.", prix: "15 000 FCFA/mois", category: "Support", pitch: "Un bon partenaire ne se contente pas de répondre aux problèmes. Il anticipe les opportunités. Bilan trimestriel documenté.", features: ["Bilan trimestriel documenté", "Analyse de performance", "Recommandations d'optimisation", "Plan d'évolution proposé"], iconPath: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>' },
+,
+  { name: "Sentinelle — Monitoring 24/7", desc: "Monitoring proactif, alertes intelligentes, escalade automatique. Détection avant vos clients.", prix: "8 000 FCFA/mois", category: "Sécurité", pitch: "Vous ne devriez jamais découvrir un problème par vos clients. Sentinelle le détecte avant eux. Monitoring proactif par l'IA Ops Jokko.", features: ["Monitoring 24/7 proactif", "Alertes intelligentes multi-canaux", "Escalade automatique", "Dashboard temps réel"], iconPath: '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>' },
+  { name: "Expansion — Stockage NVMe", desc: "Espace NVMe additionnel sans migration. Blocs S, M et L disponibles. 100% Sénégal.", prix: "Bloc S (+20 Go) : 1 500 FCFA/mois · Bloc M (+50 Go) : 3 000 FCFA/mois · Bloc L (+100 Go) : 7 500 FCFA/mois", category: "Stockage", pitch: "L'espace disque grandit avec vous. Expansion ajoute du stockage NVMe directement sur votre offre sans interruption, sans migration.", features: ["NVMe haute performance", "Activation sans interruption", "Blocs S, M et L disponibles", "Hébergement 100% Sénégal", "Résiliation mensuelle"], iconPath: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>' },
 ]
 
 const SLA_STATS = [
@@ -87,6 +90,41 @@ export default async function EntreprisePage() {
       <PersonasSection personas={PERSONAS} color="var(--o)" title="Les offres Entreprise sont faites pour vous si…" />
       <OffresEntreprise offres={offres} />
       <AddonsSection addons={ADDONS} color="var(--o)" title="Renforcez votre infrastructure" cols={4} />
+
+      {/* Services Managés */}
+      <section style={{ padding: '60px 0', background: '#F5F5F3' }}>
+        <div className="container">
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: 36 }}>
+            <div className="label" style={{ justifyContent: 'center', color: 'var(--o)' }}>Services Managés</div>
+            <h2 className="title">Votre IT géré par des experts locaux</h2>
+            <p style={{ fontSize: '.95rem', color: 'var(--bs)', maxWidth: 540, margin: '0 auto', lineHeight: 1.7 }}>Gérer un serveur ne devrait pas être votre problème. Kora et Jokko Manage s&apos;en chargent — 100% souverain, 100% Sénégal.</p>
+          </div>
+          <div className="reveal" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, maxWidth: 860, margin: '0 auto' }}>
+            {[
+              { name: 'Kora', sub: 'Virtualisation d\'applications Windows', desc: 'Vos logiciels Windows accessibles depuis n\'importe quel navigateur, sans installation, sans VPN. Compatible PC, Mac, tablette, smartphone.', prix: 'Starter (≤5 users) : 20 000 FCFA/user/mois · Business : 16 000 FCFA/user/mois', icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>' },
+              { name: 'Jokko Manage', sub: 'Infogérance souveraine clé en main', desc: 'Administration OS, supervision, gestion BDD, sauvegardes, conseil stratégique. Vous gérez votre métier — on gère votre IT.', prix: 'Essentiel (1 serveur) : 55 000 FCFA/mois · Pro (3 serveurs) : 120 000 FCFA/mois', icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' },
+            ].map((s, i) => (
+              <div key={i} className="hover-lift" style={{ background: '#fff', border: '1px solid var(--bd)', borderRadius: 16, padding: '28px 24px', boxShadow: '0 2px 12px rgba(0,0,0,.06)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
+                  <div style={{ width: 48, height: 48, minWidth: 48, borderRadius: 12, background: 'var(--obg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--o)' }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: s.icon }} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontFamily: 'var(--fd)', fontSize: '1.05rem', fontWeight: 700, marginBottom: 2 }}>{s.name}</h3>
+                    <div style={{ fontSize: '.78rem', color: 'var(--bm)' }}>{s.sub}</div>
+                  </div>
+                </div>
+                <p style={{ fontSize: '.88rem', color: 'var(--bs)', lineHeight: 1.7, marginBottom: 14 }}>{s.desc}</p>
+                <div style={{ fontSize: '.78rem', fontWeight: 700, color: 'var(--o)', borderTop: '1px solid var(--bd)', paddingTop: 12 }}>{s.prix}</div>
+                <div style={{ marginTop: 14 }}>
+                  <a href="https://manage.jokko.africa/submitticket.php" target="_blank" rel="noreferrer" className="btn btn-o" style={{ fontSize: '.82rem' }}>Demander un devis →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: 'center', fontSize: '.78rem', color: 'var(--bm)', marginTop: 20 }}>B2B et B2G uniquement · SLA contractuel · 100% Sénégal</p>
+        </div>
+      </section>
       <SlaSection stats={SLA_STATS} color="var(--b)" bg="linear-gradient(160deg,#F0F2F8,#E8ECF4,#DEE4F0)" title="Nos engagements Entreprise" badge="SLA 99.9% · Contractuel" />
       <TrajectoireSection steps={TRAJECTOIRE} nextHref="/institution" nextLabel="Institution" color="var(--o)" />
       <FaqSection faqs={FAQS} color="var(--b)" />
